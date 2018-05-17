@@ -1,0 +1,92 @@
+/*----------------------------------------------------------------------------------------------------*/
+/* bootstrap 과 jquery ui의 충돌을 해결하기 위한 처리 */
+/*body .input-append input, body .input-append button { font-size:10pt; }*/
+/*body .ui-spinner input { margin:0; }*/
+/*----------------------------------------------------------------------------------------------------*/
+body header > .dProfile { max-width:none; }
+body section.dMainBody { max-width:none; }
+/* 기타 */
+/* alertify 0.3.9버전에서 보여진 후 다시 숨겨진 상태에서 사라지지 않음(투명하나 상단에 존재함) */
+:root * > .alertify-hidden.alertify-isHidden { visibility:hidden; }
+/* -----------------------------------------------
+ * 공통 */
+/* loan */
+.dLoan { padding:30px 0 0 0; min-width:320px; }
+.dLoan .dFormBox { margin-bottom:15px; }
+.dLoan .form-horizontal { overflow-x:hidden; }
+.dLoan .dWon { padding-right:55px; }
+.dLoan input[type=number] { text-align:right; }
+.dLoan .control-label { text-align:right; padding-right:0; padding-left:0; word-wrap:break-word; }
+.dLoan .dUtilBtn { padding:5px 0 0 0; margin:0; clear:both; }
+.dLoan .dUtilBtn .btn { margin-bottom:5px; padding:5px 7px; }
+.dLoan .dHelp { padding:5px 0; margin:0; clear:both; }
+.dLoan .dSummary th, .dLoan .dRows th { text-align:center; font-size:12px; white-space:nowrap; padding:5px 0; }
+.dLoan .dSummary td, .dLoan .dRows td { text-align:right; font-size:12px; white-space:nowrap; }
+.dLoan .dResult { min-width:320px; }
+.dLoan .dResult .nav > li > a { padding:10px 10px; font-size:13px; }
+.dLoan .dResult .nav { margin-bottom:15px; }
+.dLoan .dResult .panel { font-size:12px; }
+.dLoan .dResult .rowsPanel { display:none; }
+.dLoan .dResult.hasRows .rowsPanel { display:block; }
+.dLoan .dTerms { clear:both; margin-top:15px; }
+.bs-callout { padding:20px; margin:20px 0; border:1px solid #eee; border-left-width:5px; border-radius:3px }
+.bs-callout h4 { margin-top:0; margin-bottom:10px }
+.bs-callout h4 a span { font-size:14px; color:#666; }
+.bs-callout p:last-child { margin-bottom:0 }
+.bs-callout code { border-radius:3px }
+.bs-callout + .bs-callout { margin-top:-5px }
+.bs-callout-danger { border-left-color:#ce4844 }
+.bs-callout-danger h4 { color:#ce4844 }
+.bs-callout-warning { border-left-color:#aa6708 }
+.bs-callout-warning h4 { color:#aa6708 }
+.bs-callout-info { border-left-color:#1b809e }
+.bs-callout-info h4 { color:#1b809e }
+#cCalcHistory ol { padding-left:30px; font-size:11px; color:#999; letter-spacing:1px; }
+#cCalcHistory li {
+	list-style-type:decimal;
+	padding-bottom:5px;
+	/*padding-left:10px;*/
+	/*text-indent:-15px;*/
+}
+/* -----------------------------------------------
+ * 미디어쿼리 */
+@media only screen and (min-width:1251px) {
+	.dLoan .dFormBox { max-width:440px; float:left; }
+	.dLoan .dTerms,
+	.dLoan .dResult { margin-left:460px; overflow-x:hidden; }
+	.dLoan .dTerms { clear:none; margin-top:0; }
+	.dLoan .dTerms.calced { margin-left:0; overflow-x:auto; }
+}
+@media only screen and (max-width:1250px) {
+	body header > .dProfile { max-width:1000px; }
+	body section.dMainBody { max-width:1000px; }
+	body { padding:0 5px; }
+	.dLoan .dFormBox { max-width:650px; }
+}
+@media only screen and (max-width:360px) {
+	body { padding:0 5px; }
+	.dLoan { min-width:300px; }
+	.dLoan .dResult { min-width:300px; }
+	.dLoan .dResult .nav > li > a { font-size:12px; }
+	.col-xs-2 { width:20%; }
+	.col-xs-10 { width:80%; }
+	.dLoan .dRows th { font-size:11px; }
+	.dLoan .dRows td { font-size:10px; }
+}
+/* -----------------------------------------------
+ * 애드센스 */
+.dAdBox { margin-bottom:20px; max-width:100%; overflow:hidden; }
+/* 계산기 상단 */
+/*.dLoan .dFormBox .dAdBox.dTop .adsbygoogle { display:block; margin:0 auto; width:320px; height:100px; }
+@media only screen and (max-width:339px) {
+	.dLoan .dFormBox .dAdBox.dTop .adsbygoogle { width:auto; height:auto; }
+}*/
+.dLoan .dAdBox.dTop .adsbygoogle { display:block; margin:30px auto 30px auto; width:auto; height:auto; }
+@media only screen and (max-width:359px) {
+	.dLoan .dAdBox.dTop .adsbygoogle { width:300px; height:250px; }
+}
+/* 계신버튼 하단 */
+.dLoan .dFormBox .dAdBox .adsbygoogle { display:block; margin:0 auto 30px auto; width:336px; height:280px; }
+@media only screen and (max-width:359px) {
+	.dLoan .dFormBox .dAdBox .adsbygoogle { width:300px; height:250px; }
+}

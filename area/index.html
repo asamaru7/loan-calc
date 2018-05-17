@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+					
+			
+	<title>평수 / 면적 계산기</title>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<link rel="canonical" href="https://loan.asamaru.net/area/">
+
+	<meta name="author" content="Asamaru">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+
+	<!-- //opengraphprotocol.org/ -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://loan.asamaru.net/area/">
+	<meta property="og:title" content="평수 / 면적 계산기">
+	<meta property="og:description" content="평/㎡(제곱미터) 단위 환산 및 변환">
+
+	<meta name="keywords" content="면젹, 평, 평수, m2, ㎡, 제곱미터 단위 환산 및 변환"/>
+	<meta name="description" content="평/㎡(제곱미터) 단위 환산 및 변환"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!--<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>-->
+
+	<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+	<link rel="dns-prefetch" href="//www.google-analytics.com">
+
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+
+	<link href="/res/css/min/x583cfc94e07541d17a7dad72d45502c9395f6ae9.css" type="text/css" rel="stylesheet" />
+<script src="/res/js/min/x57bc1aa91d92f063fe4b6714c1ba7fce0b54c1a8.js" async="true" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="dArea pAreaMain">
+	<h1>
+		<span>평수 / 면적 계산기</span>
+		<div class="pull-right"><a href="https://loan.asamaru.net">대출 이자 계산기</a></div>
+	</h1>
+
+	<div class="dAdBox">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- 평수 계산기 상단 -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-8163803188491150"
+		     data-ad-slot="7514376222"
+		     data-ad-format="auto"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+
+	<div class="dFormBox">
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="col-xs-2 control-label">㎡ → 평</label>
+
+				<div class="col-xs-10">
+					<div class="input-group col-xs-6">
+						<input type="number" class="form-control" v-model="m2"/>
+						<div class="input-group-addon">㎡</div>
+					</div>
+					<div class="input-group col-xs-1">
+						→
+					</div>
+					<div class="input-group col-xs-4">
+						<span class="help-block text-right dWon"><span class="text-danger" v-cloak>{{ pyungText }}</span> 평</span>
+					</div>
+					<div class="dUtilBtn">
+						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="m2 = 59.5">59.5</button>
+						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="m2 = 79.34">79.34</button>
+						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="m2 = 92.56">92.56</button>
+						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="m2 = 105.79">105.79</button>
+						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="m2 = 119.01">119.01</button>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-2 control-label">평 → ㎡</label>
+
+				<div class="col-xs-10">
+					<div class="input-group col-xs-6">
+						<input type="number" class="form-control" v-model="pyung"/>
+						<div class="input-group-addon">평</div>
+					</div>
+					<div class="input-group col-xs-1">
+						→
+					</div>
+					<div class="input-group col-xs-4">
+						<span class="help-block text-right dWon"><span class="text-danger" v-cloak>{{ m2Text }}</span> ㎡</span>
+					</div>
+					<div class="dUtilBtn">
+						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="pyung = 18;">18평</button>
+						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="pyung = 24;">24평</button>
+						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="pyung = 28;">28평</button>
+						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="pyung = 32;">32평</button>
+						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="pyung = 36;">36평</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="dResult">
+		<div class="panel panel-danger">
+			<div class="panel-heading"><i class="glyphicon glyphicon-star"></i> 주의사항</div>
+			<div class="panel-body">2007.7.1부터 「계량에 관한 법률」2조 제1항에 따라 ‘평’단위를 사용하지 않습니다.</div>
+		</div>
+		<div class="dTrans">
+			<h3>㎡ / 평 변환표<span>1㎡ = 0.3025평</span></h3>
+			<table summary="제곱미터-평" class="table table-bordered table-striped">
+				<thead>
+				<tr>
+					<th>제곱미터(㎡)</th>
+					<th>평</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>62 ㎡</td>
+					<td>18.76 평</td>
+				</tr>
+				<tr>
+					<td>66 ㎡</td>
+					<td>19.97 평</td>
+				</tr>
+				<tr>
+					<td>69 ㎡</td>
+					<td>20.87 평</td>
+				</tr>
+				<tr>
+					<td>72 ㎡</td>
+					<td>21.78 평</td>
+				</tr>
+				<tr>
+					<td>76 ㎡</td>
+					<td>22.99 평</td>
+				</tr>
+				<tr>
+					<td>79 ㎡</td>
+					<td>23.90 평</td>
+				</tr>
+				<tr>
+					<td>82 ㎡</td>
+					<td>24.81 평</td>
+				</tr>
+				<tr>
+					<td>85 ㎡</td>
+					<td>25.71 평</td>
+				</tr>
+				<tr>
+					<td>89 ㎡</td>
+					<td>26.92 평</td>
+				</tr>
+				<tr>
+					<td>92 ㎡</td>
+					<td>27.83 평</td>
+				</tr>
+				<tr>
+					<td>95 ㎡</td>
+					<td>28.74 평</td>
+				</tr>
+				<tr>
+					<td>99 ㎡</td>
+					<td>29.95 평</td>
+				</tr>
+				<tr>
+					<td>102 ㎡</td>
+					<td>30.86 평</td>
+				</tr>
+				<tr>
+					<td>105 ㎡</td>
+					<td>31.76 평</td>
+				</tr>
+				<tr>
+					<td>109 ㎡</td>
+					<td>32.97 평</td>
+				</tr>
+				<tr>
+					<td>112 ㎡</td>
+					<td>33.88 평</td>
+				</tr>
+				<tr>
+					<td>115 ㎡</td>
+					<td>34.79 평</td>
+				</tr>
+				<tr>
+					<td>118 ㎡</td>
+					<td>35.70 평</td>
+				</tr>
+				<tr>
+					<td>122 ㎡</td>
+					<td>36.91 평</td>
+				</tr>
+				<tr>
+					<td>125 ㎡</td>
+					<td>37.81 평</td>
+				</tr>
+				<tr>
+					<td>128 ㎡</td>
+					<td>38.72 평</td>
+				</tr>
+				<tr>
+					<td>132 ㎡</td>
+					<td>39.93 평</td>
+				</tr>
+				<tr>
+					<td>135 ㎡</td>
+					<td>40.84 평</td>
+				</tr>
+				<tr>
+					<td>138 ㎡</td>
+					<td>41.75 평</td>
+				</tr>
+				<tr>
+					<td>142 ㎡</td>
+					<td>42.96 평</td>
+				</tr>
+				<tr>
+					<td>145 ㎡</td>
+					<td>43.86 평</td>
+				</tr>
+				<tr>
+					<td>148 ㎡</td>
+					<td>44.77 평</td>
+				</tr>
+				<tr>
+					<td>152 ㎡</td>
+					<td>45.98 평</td>
+				</tr>
+				<tr>
+					<td>155 ㎡</td>
+					<td>46.89 평</td>
+				</tr>
+				<tr>
+					<td>158 ㎡</td>
+					<td>47.80 평</td>
+				</tr>
+				<tr>
+					<td>161 ㎡</td>
+					<td>48.70 평</td>
+				</tr>
+				<tr>
+					<td>165 ㎡</td>
+					<td>49.91 평</td>
+				</tr>
+				<tr>
+					<td>168 ㎡</td>
+					<td>50.82 평</td>
+				</tr>
+				<tr>
+					<td>171 ㎡</td>
+					<td>51.73 평</td>
+				</tr>
+				<tr>
+					<td>175 ㎡</td>
+					<td>52.94 평</td>
+				</tr>
+				<tr>
+					<td>178 ㎡</td>
+					<td>53.85 평</td>
+				</tr>
+				<tr>
+					<td>181 ㎡</td>
+					<td>54.75 평</td>
+				</tr>
+				<tr>
+					<td>185 ㎡</td>
+					<td>55.96 평</td>
+				</tr>
+				<tr>
+					<td>188 ㎡</td>
+					<td>56.87 평</td>
+				</tr>
+				<tr>
+					<td>191 ㎡</td>
+					<td>57.78 평</td>
+				</tr>
+				<tr>
+					<td>195 ㎡</td>
+					<td>58.99 평</td>
+				</tr>
+				<tr>
+					<td>198 ㎡</td>
+					<td>59.90 평</td>
+				</tr>
+				<tr>
+					<td>199 ㎡</td>
+					<td>60.20 평</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="dAdBox">
+			<!-- 평수 계산기 중앙 -->
+			<script>
+				var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+				if (width <= 960) {
+					document.write('<s' + 'cript async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
+					document.write('<i' + 'ns class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8163803188491150" data-ad-slot="8991109421" data-ad-format="auto"><' + '/ins>');
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				}
+			</script>
+		</div>
+		<div class="dTrans">
+			<h3>평 / ㎡ 변환표<span>1평 = 3.31㎡</span></h3>
+			<table summary="평-제곱미터" class="table table-bordered table-striped">
+				<thead>
+				<tr>
+					<th>평</th>
+					<th>제곱미터(㎡)</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>18 평</td>
+					<td>59.50 ㎡</td>
+				</tr>
+				<tr>
+					<td>19 평</td>
+					<td>62.81 ㎡</td>
+				</tr>
+				<tr>
+					<td>20 평</td>
+					<td>66.12 ㎡</td>
+				</tr>
+				<tr>
+					<td>21 평</td>
+					<td>69.42 ㎡</td>
+				</tr>
+				<tr>
+					<td>22 평</td>
+					<td>72.73 ㎡</td>
+				</tr>
+				<tr>
+					<td>23 평</td>
+					<td>76.03 ㎡</td>
+				</tr>
+				<tr>
+					<td>24 평</td>
+					<td>79.34 ㎡</td>
+				</tr>
+				<tr>
+					<td>25 평</td>
+					<td>82.64 ㎡</td>
+				</tr>
+				<tr>
+					<td>26 평</td>
+					<td>85.95 ㎡</td>
+				</tr>
+				<tr>
+					<td>27 평</td>
+					<td>89.26 ㎡</td>
+				</tr>
+				<tr>
+					<td>28 평</td>
+					<td>92.56 ㎡</td>
+				</tr>
+				<tr>
+					<td>29 평</td>
+					<td>95.87 ㎡</td>
+				</tr>
+				<tr>
+					<td>30 평</td>
+					<td>99.17 ㎡</td>
+				</tr>
+				<tr>
+					<td>31 평</td>
+					<td>102.48 ㎡</td>
+				</tr>
+				<tr>
+					<td>32 평</td>
+					<td>105.79 ㎡</td>
+				</tr>
+				<tr>
+					<td>33 평</td>
+					<td>109.09 ㎡</td>
+				</tr>
+				<tr>
+					<td>34 평</td>
+					<td>112.40 ㎡</td>
+				</tr>
+				<tr>
+					<td>35 평</td>
+					<td>115.70 ㎡</td>
+				</tr>
+				<tr>
+					<td>36 평</td>
+					<td>119.01 ㎡</td>
+				</tr>
+				<tr>
+					<td>37 평</td>
+					<td>122.31 ㎡</td>
+				</tr>
+				<tr>
+					<td>38 평</td>
+					<td>125.62 ㎡</td>
+				</tr>
+				<tr>
+					<td>39 평</td>
+					<td>128.93 ㎡</td>
+				</tr>
+				<tr>
+					<td>40 평</td>
+					<td>132.23 ㎡</td>
+				</tr>
+				<tr>
+					<td>41 평</td>
+					<td>135.54 ㎡</td>
+				</tr>
+				<tr>
+					<td>42 평</td>
+					<td>138.84 ㎡</td>
+				</tr>
+				<tr>
+					<td>43 평</td>
+					<td>142.15 ㎡</td>
+				</tr>
+				<tr>
+					<td>44 평</td>
+					<td>145.45 ㎡</td>
+				</tr>
+				<tr>
+					<td>45 평</td>
+					<td>148.76 ㎡</td>
+				</tr>
+				<tr>
+					<td>46 평</td>
+					<td>152.07 ㎡</td>
+				</tr>
+				<tr>
+					<td>47 평</td>
+					<td>155.37 ㎡</td>
+				</tr>
+				<tr>
+					<td>48 평</td>
+					<td>158.68 ㎡</td>
+				</tr>
+				<tr>
+					<td>49 평</td>
+					<td>161.98 ㎡</td>
+				</tr>
+				<tr>
+					<td>50 평</td>
+					<td>165.29 ㎡</td>
+				</tr>
+				<tr>
+					<td>51 평</td>
+					<td>168.60 ㎡</td>
+				</tr>
+				<tr>
+					<td>52 평</td>
+					<td>171.90 ㎡</td>
+				</tr>
+				<tr>
+					<td>53 평</td>
+					<td>175.21 ㎡</td>
+				</tr>
+				<tr>
+					<td>54 평</td>
+					<td>178.51 ㎡</td>
+				</tr>
+				<tr>
+					<td>55 평</td>
+					<td>181.82 ㎡</td>
+				</tr>
+				<tr>
+					<td>56 평</td>
+					<td>185.12 ㎡</td>
+				</tr>
+				<tr>
+					<td>57 평</td>
+					<td>188.43 ㎡</td>
+				</tr>
+				<tr>
+					<td>58 평</td>
+					<td>191.74 ㎡</td>
+				</tr>
+				<tr>
+					<td>59 평</td>
+					<td>195.04 ㎡</td>
+				</tr>
+				<tr>
+					<td>60 평</td>
+					<td>198.35 ㎡</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="dAdBox">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- 평수 계산기 하단 -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-8163803188491150"
+		     data-ad-slot="1467842621"
+		     data-ad-format="auto"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+</div>
+
+
+
+
+
+
+
+<script>
+	(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+		a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-65749108-3', 'auto');
+	ga('send', 'pageview');
+</script>
+</body>
+</html>

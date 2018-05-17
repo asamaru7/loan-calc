@@ -1,0 +1,46 @@
+/* -----------------------------------------------
+ * 공통 */
+body { padding:24px 25px; /*background:#eee;*/ color:#444; }
+footer { border-top:#ccc solid 1px; margin:30px 0 20px 0; padding-top:20px; }
+h1 { border-bottom:#ccc solid 1px; margin-top:0; margin-bottom:20px; padding-bottom:10px; font-size:24px; }
+h1 > div a { font-size:14px; }
+.dAdBox { margin-bottom:20px; }
+/* loan */
+.dArea { padding:0; min-width:320px; max-width:1200px; margin:0 auto; }
+.dArea .dFormBox { margin-bottom:15px; }
+.dArea .dFormBox .input-group { float:left; }
+.dArea .dFormBox .input-group.col-xs-1 { text-align:center; line-height:30px; }
+.dArea .form-horizontal { overflow-x:hidden; }
+.dArea .dWon { padding-right:0; font-size:18px; }
+.dArea input[type=number] { text-align:right; }
+.dArea .control-label { text-align:right; padding-right:0; padding-left:0; word-wrap:break-word; }
+.dArea .dUtilBtn { padding:5px 0 0 0; margin:0; clear:both; }
+.dArea .dUtilBtn .btn { margin-bottom:5px; padding:5px 7px; }
+.dArea .dHelp { padding:5px 0; margin:0; clear:both; }
+.dArea .dResult .panel { font-size:12px; }
+.dArea .dTerms { clear:both; margin-top:15px; }
+.dArea .dTrans { float:left; min-width:300px; max-width:320px; margin-right:10px; }
+.dArea .dTrans th { text-align:center; }
+.dArea .dTrans h3 { font-size:18px; }
+.dArea .dTrans h3 span { font-size:12px; color:#aaa; padding-left:10px; }
+/* -----------------------------------------------
+ * 미디어쿼리 */
+@media screen and (min-width:960px) {
+	.dArea .dFormBox { max-width:440px; float:left; }
+	.dArea .dResult { margin-left:460px; overflow-x:hidden; }
+}
+@media screen and (max-width:960px) {
+	body { padding:24px 5px; }
+	/*.dArea .dResult .panel-danger { min-width:300px; max-width:320px; margin:0 auto; }*/
+	.dArea .dFormBox { max-width:650px; }
+	.dArea .dTrans { float:none; margin:0 auto; }
+}
+@media screen and (max-width:360px) {
+	body { padding:24px 5px; }
+	.dArea .dUtilBtn .btn { padding:5px; }
+	.dArea { min-width:310px; }
+	.col-xs-2 { width:20%; }
+	.col-xs-10 { width:80%; }
+	.dArea .dRows th { font-size:11px; }
+	.dArea .dRows td { font-size:10px; }
+}

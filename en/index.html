@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+					<title>Loan Calculator</title>
+	<meta name="author" content="Asamaru">
+	<meta name="keywords" content="Loan Calculator,mortgage">
+	
+	<meta name="description" content="Simple Loan Calculator (P&amp;I with equal, P with equal, Bullet) : Loan Calculator">
+	<meta name="referrer" content="always">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" type="image/x-icon" href="https://loan.asamaru.net/favicon.ico"/>
+	<link rel="canonical" href="https://loan.asamaru.net"/>
+	
+	<link href="//www.google-analytics.com" rel="dns-prefetch"/>
+	
+		<!--[if lt IE 9]>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+
+	<script src="/res/js/min/x8276b64a06b9c4c429ea0ae403e197265ece3740.js" async="true" type="text/javascript"></script>
+<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+
+						<link rel="alternate" href="https://loan.asamaru.net" hreflang="ko"/>
+					<link rel="alternate" href="https://loan.asamaru.net/en/" hreflang="en"/>
+			
+	
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Loan Calculator">
+	<meta property="og:title" content="Loan Calculator">
+	<meta property="og:description" content="Simple Loan Calculator (P&amp;I with equal, P with equal, Bullet)">
+	<meta property="og:url" content="https://loan.asamaru.net" />
+	<meta property="og:image" content="https://loan.asamaru.net/res/img/icon/icon.png">
+	
+
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@asamaru7">
+	<meta name="twitter:title" content="Loan Calculator">
+	<meta name="twitter:description" content="Simple Loan Calculator (P&amp;I with equal, P with equal, Bullet)">
+	<meta property="twitter:image" content="https://loan.asamaru.net/res/img/icon/icon.png">
+	
+
+										<link rel="apple-touch-icon" sizes="180x180" href="/res/img/icon/180.png">
+												<link rel="apple-touch-icon" sizes="76x76" href="/res/img/icon/76.png">
+												<link rel="apple-touch-icon" sizes="120x120" href="/res/img/icon/120.png">
+												<link rel="apple-touch-icon" sizes="152x152" href="/res/img/icon/152.png">
+						
+	<link rel="alternate" type="application/rss+xml" title="Loan Calculator" href="https://loan.asamaru.net/atom.xml"/>
+
+			<link href="/res/css/min/xc0068814a13d40fadcba55663e7ab7846da149e7.css" type="text/css" rel="stylesheet" />
+
+	
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-65749108-3', 'auto');
+			ga('send', 'pageview');
+		</script>
+	
+	</head>
+<body class="cEn">
+<header>
+	<div class="dProfile">
+		<a href="https://loan.asamaru.net"><img src="/res/img/icon/icon.png" width="50" height="50" alt="profile"></a>
+		<h1><a href="https://loan.asamaru.net">Loan Calculator</a></h1>
+					<p>Simple Loan Calculator (P&amp;I with equal, P with equal, Bullet)</p>
+				<button type="button" id="cBtnSlide"></button>
+	</div>
+</header>
+<section class="dMainBody">
+<div class="dWrapContent">
+	<section id="cMainPanel" class="clearfix">
+			<div class="dLoan pLoanMain">
+		<div class="dFormBox">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-xs-2 control-label">Loan amount</label>
+
+					<div class="col-xs-10">
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							<input type="number" id="pMoney" class="form-control" v-model="money"/>
+						</div>
+						<div class="dUtilBtn">
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="plusMoney(1000)">1k</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="plusMoney(10000)">10k</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="plusMoney(100000)">100k</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="plusMoney(1000000)">1m</button>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-2 control-label">Interest Rate</label>
+
+					<div class="col-xs-10">
+						<div class="input-group">
+							<input type="number" id="pRate" class="form-control" v-model="rate"/>
+							<div class="input-group-addon">%</div>
+						</div>
+						<div class="dUtilBtn">
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 2.0">2%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 3.0">3%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 4.0">4%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 5.0">5%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 6.0">6%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 7.0">7%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 10.0">10%</button>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-2 control-label">Period</label>
+
+					<div class="col-xs-10">
+						<div class="input-group">
+							<input type="number" id="pPeriod" class="form-control" v-model="period"/>
+							<div class="input-group-addon">Month</div>
+						</div>
+						<div class="dUtilBtn">
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 12">1<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 24">2<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 36">3<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 48">4<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 60">5<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 120">10<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 180">15<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 240">20<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 360">30<span>y</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-2 control-label">Grace Period</label>
+
+					<div class="col-xs-10">
+						<div class="input-group">
+							<input type="number" id="pTerm" class="form-control" v-model="term"/>
+
+							<div class="input-group-addon">Month</div>
+						</div>
+						<div class="dUtilBtn">
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="term = 12">1<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="term = 24">2<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="term = 36">3<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="term = 48">4<span>y</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="term = 60">5<span>y</span></button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+			<div class="form-group">
+				<div class="text-center">
+					<button type="button" class="btn btn-primary" v-on:click="calc">Calculate</button>
+					<button type="button" class="btn btn-danger" v-on:click="reset">Reset</button>
+				</div>
+			</div>
+
+			<div class="dAdBox">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- 계산기 하단 -->
+				<ins class="adsbygoogle"
+				     
+				     data-ad-client="ca-pub-8163803188491150"
+				     data-ad-slot="1467842621"
+				     data-ad-format=""></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+		</div>
+
+		<div class="dResult" v-bind:class="{ hasRows: rows.length > 0 }" >
+			<ul class="nav nav-tabs">
+				<li role="presentation" v-bind:class="{ active: type === 1 }"><a href="javascript:void(0)" v-on:click="type = 1">P&I with equal</a></li>
+				<li role="presentation" v-bind:class="{ active: type === 2 }"><a href="javascript:void(0)" v-on:click="type = 2">P with equal</a></li>
+				<li role="presentation" v-bind:class="{ active: type === 3 }"><a href="javascript:void(0)" v-on:click="type = 3">Bullet</a></li>
+			</ul>
+
+			<div v-if="type === 1">
+				<div class="panel panel-primary">
+					<div class="panel-body">repayment of principal and interest with equal payments</div>
+				</div>
+			</div>
+			<div v-if="type === 2">
+				<div class="panel panel-primary">
+					<div class="panel-body">repayment of principal with equal payments</div>
+				</div>
+			</div>
+			<div v-if="type === 3">
+				<div class="panel panel-primary">
+					<div class="panel-body">bullet repayment</div>
+				</div>
+			</div>
+
+			<div class="rowsPanel">
+				<table class="table table-bordered table-condensed dSummary">
+					<caption>
+						<span>{{ typeText }}</span> <span>Result</span>
+						
+							
+						
+					</caption>
+					<thead>
+					<tr>
+						<th scope="col">Loan amount</th>
+						<th scope="col">Period</th>
+						<th scope="col">Interest Rate</th>
+						<th scope="col">Grace Period</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td><span>{{ moneyNumber }}</span></td>
+						<td><span>{{ period }}</span> <span>Month</span></td>
+						<td><span>{{ rate }}</span>%</td>
+						<td><span>{{ term }}</span> <span>Month</span></td>
+					</tr>
+					</tbody>
+					<thead>
+					<tr>
+						<th scope="col">{{ summaryText }}</th>
+						<th scope="col">Total Interest</th>
+						<th scope="col" colspan="2">Total Principal & Interest</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td><span>{{ loanMonth }}</span></td>
+						<td><span>{{ loanRateAmt }}</span></td>
+						<td colspan="2"><span>{{ loanTotalAmt }}</span></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="dAdBox dTop">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- 계산기 상단 -->
+				<ins class="adsbygoogle"
+				     
+				     data-ad-client="ca-pub-8163803188491150"
+				     data-ad-slot="7514376222"
+				     data-ad-format="auto"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+
+			<div class="rowsPanel">
+				<table class="table table-striped table-bordered table-condensed dRows" id="cRows">
+					<thead>
+					<tr>
+						<th>Num</th>
+						<th>Payment</th>
+						<th>Principal</th>
+						<th>Interest</th>
+						<th>Total Principal Paid</th>
+						<th>Balance</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr v-for="row in rows">
+						<td>{{ row.num }}</td>
+						<td>{{ row.payments }}</td>
+						<td>{{ row.principal }}</td>
+						<td>{{ row.interest }}</td>
+						<td>{{ row.total }}</td>
+						<td>{{ row.balance }}</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	</section>
+</div>
+<nav id="cSide" class="slideout-menu">
+	<div class="dSideBox">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- 계산기 중앙 -->
+		<ins class="adsbygoogle"
+		     
+		     data-ad-client="ca-pub-8163803188491150"
+		     data-ad-slot="8991109421"
+		     data-ad-format="auto"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		<form action="https://www.google.com/search" method="get" target="_blank" class="dFormSearch">
+			<fieldset>
+				<input type="hidden" name="sitesearch" value="https://loan.asamaru.net">
+				<legend>검색하기 폼</legend>
+				<label class="dIcon">검색하기</label>
+				<input type="text" name="q" value="" placeholder="Search"/>
+			</fieldset>
+		</form>
+
+		<dl class="dPages">
+			<dt>대출금 상환 방식</dt>
+			<dd>
+				<ul>
+					<li><a href="/terms/원리금균등분할상환/">원리금 균등 분할 상환</a></li>
+					<li><a href="/terms/원금균등분할상환/">원금 균등 분할 상환</a></li>
+					<li><a href="/terms/원금만기일시상환/">원금 만기 일시 상환</a></li>
+				</ul>
+			</dd>
+		</dl>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<dl v-cloak id="cCalcHistory">
+			<dt>
+									History
+							</dt>
+			<dd>
+				<ol>
+					<li v-for="(row, index) in calcHistory">
+						<a href="javascript:void(0);" v-on:click="calcByArgs(row.type, row.money, row.rate, row.period, row.term)">
+							<span v-html="printHistory(index, row)"></span>
+						</a>
+					</li>
+				</ol>
+			</dd>
+		</dl>
+
+		<div class="cBtnList">
+			<a href="/area/" class="btn btn-block btn-warning cBtnArea">평수 / 면적 계산기</a>
+		</div>
+
+		<div class="cBtnList">
+							<a href="/" class="btn btn-block btn-success">한국어</a>
+					</div>
+	</div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+<footer>
+	hosted by <a href="https://github.com/"><em>Github</em></a> / Posted by <a href="mailto:asamaru@asamaru.net"><em>Asamaru</em></a>
+</footer>
+
+
+
+
+
+
+</body>
+</html>

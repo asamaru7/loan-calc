@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+					<title>대출 이자 계산기</title>
+	<meta name="author" content="Asamaru">
+	<meta name="keywords" content="대출계산기,원리금균등분할상환,원금균등분할상환,원금만기일시상환,대출계산기,대출이자계산기,원리금상환계산기,원리금균등상환 계산기,원금균등상환 계산기,원금만기일시상환 계산기,대출이자계산기 xls,대출 이자 계산 엑셀,대출 이자,이자 계산기,대출 금리,원리금균등상환,원금균등상환,원금만기일시상환,담보대출,대출금리,대출이자,신용대출,은행대출,전세대출,전세자금대출,주택담보대출,주택대출,학자금대출,대출계산기,대출이자계산기,이자계산기,대출금리계산기,다음 금융계산기,적금계산기,예금계산기,대출이자 계산기,적금금리계산기,이자계산,대출이자계산법,이자계산법,디딤돌 대출,Monthly Principal and Interest Payment,monthly fixed principal payments,interest only mortgage">
+	
+	<meta name="description" content="원리금균등상환/원금균등상환/원금만기일시상환에 대한 이자 및 상환금 계산 : 대출 이자 계산기">
+	<meta name="referrer" content="always">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" type="image/x-icon" href="https://loan.asamaru.net/favicon.ico"/>
+	<link rel="canonical" href="https://loan.asamaru.net"/>
+	
+	<link href="//www.google-analytics.com" rel="dns-prefetch"/>
+	
+		<!--[if lt IE 9]>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+
+	<script src="/res/js/min/x36920fdeef5014232ec3110acdaf5b5db27bb2d7.js" async="true" type="text/javascript"></script>
+<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+
+						<link rel="alternate" href="https://loan.asamaru.net" hreflang="ko"/>
+					<link rel="alternate" href="https://loan.asamaru.net/en/" hreflang="en"/>
+			
+	
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="대출 이자 계산기">
+	<meta property="og:title" content="대출 이자 계산기">
+	<meta property="og:description" content="원리금균등상환/원금균등상환/원금만기일시상환에 대한 이자 및 상환금 계산">
+	<meta property="og:url" content="https://loan.asamaru.net" />
+	<meta property="og:image" content="https://loan.asamaru.net/res/img/icon/icon.png">
+	
+
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@asamaru7">
+	<meta name="twitter:title" content="대출 이자 계산기">
+	<meta name="twitter:description" content="원리금균등상환/원금균등상환/원금만기일시상환에 대한 이자 및 상환금 계산">
+	<meta property="twitter:image" content="https://loan.asamaru.net/res/img/icon/icon.png">
+	
+
+										<link rel="apple-touch-icon" sizes="180x180" href="/res/img/icon/180.png">
+												<link rel="apple-touch-icon" sizes="76x76" href="/res/img/icon/76.png">
+												<link rel="apple-touch-icon" sizes="120x120" href="/res/img/icon/120.png">
+												<link rel="apple-touch-icon" sizes="152x152" href="/res/img/icon/152.png">
+						
+	<link rel="alternate" type="application/rss+xml" title="대출 이자 계산기" href="https://loan.asamaru.net/atom.xml"/>
+
+			<link href="/res/css/min/xc0068814a13d40fadcba55663e7ab7846da149e7.css" type="text/css" rel="stylesheet" />
+
+	
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-65749108-3', 'auto');
+			ga('send', 'pageview');
+		</script>
+	
+	</head>
+<body>
+<header>
+	<div class="dProfile">
+		<a href="https://loan.asamaru.net"><img src="/res/img/icon/icon.png" width="50" height="50" alt="profile"></a>
+		<h1><a href="https://loan.asamaru.net">대출 이자 계산기</a></h1>
+					<p>원리금균등상환/원금균등상환/원금만기일시상환에 대한 이자 및 상환금 계산</p>
+				<button type="button" id="cBtnSlide"></button>
+	</div>
+</header>
+<section class="dMainBody">
+<div class="dWrapContent">
+	<section id="cMainPanel" class="clearfix">
+			<div class="dLoan pLoanMain">
+		<div class="dFormBox">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-xs-2 control-label">대출금</label>
+
+					<div class="col-xs-10">
+						<div class="input-group">
+							<input type="number" id="pMoney" class="form-control" v-model="money"/>
+							<div class="input-group-addon">원</div>
+						</div>
+						<div class="dUtilBtn">
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="plusMoney(100000)">십만원</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="plusMoney(1000000)">백만원</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="plusMoney(10000000)">천만원</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="plusMoney(100000000)">일억원</button>
+						</div>
+						<span class="help-block text-right dWon" v-if="parseFloat(moneyText) > 0" v-cloak><span class="text-danger">{{moneyText}}</span>원</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-2 control-label">대출금리</label>
+
+					<div class="col-xs-10">
+						<div class="input-group">
+							<div class="input-group-addon">연</div>
+							<input type="number" id="pRate" class="form-control" v-model="rate"/>
+							<div class="input-group-addon">%</div>
+						</div>
+						<div class="dUtilBtn">
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 2.0">2%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 3.0">3%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 4.0">4%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 5.0">5%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 6.0">6%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 7.0">7%</button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="rate = 10.0">10%</button>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-2 control-label">대출기간</label>
+
+					<div class="col-xs-10">
+						<div class="input-group">
+							<input type="number" id="pPeriod" class="form-control" v-model="period"/>
+							<div class="input-group-addon">개월</div>
+						</div>
+						<div class="dUtilBtn">
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 12">1<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 24">2<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 36">3<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 48">4<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 60">5<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 120">10<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 180">15<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 240">20<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="period = 360">30<span>년</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-2 control-label">거치기간</label>
+
+					<div class="col-xs-10">
+						<div class="input-group">
+							<input type="number" id="pTerm" class="form-control" v-model="term"/>
+
+							<div class="input-group-addon">개월</div>
+						</div>
+						<div class="dUtilBtn">
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="term = 12">1<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="term = 24">2<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="term = 36">3<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="term = 48">4<span>년</span></button>
+							<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="term = 60">5<span>년</span></button>
+						</div>
+						<div class="dHelp text-info">
+							거치기간동안 이자만 납부하고, 거치기간이 끝나면 원금과 이자를 납부하게 됩니다.
+						</div>
+					</div>
+				</div>
+			</form>
+
+			<div class="form-group">
+				<div class="text-center">
+					<button type="button" class="btn btn-primary" v-on:click="calc">계산하기</button>
+					<button type="button" class="btn btn-danger" v-on:click="reset">초기화</button>
+				</div>
+			</div>
+
+			<div class="dAdBox">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- 계산기 하단 -->
+				<ins class="adsbygoogle"
+				     
+				     data-ad-client="ca-pub-8163803188491150"
+				     data-ad-slot="1467842621"
+				     data-ad-format=""></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+		</div>
+
+		<div class="dResult" v-bind:class="{ hasRows: rows.length > 0 }">
+			<div class="panel panel-danger">
+				<div class="panel-heading"><i class="glyphicon glyphicon-star"></i> 주의사항</div>
+				<div class="panel-body">
+					계산 결과는 월 단위로 계산한 것으로 실제 대출 시작 일자에 따른 일할 계산과 기타 다른 조건에 따른 오차가 있을 수 있으므로 참고용으로만 사용하세요.
+				</div>
+			</div>
+
+			<ul class="nav nav-tabs">
+				<li role="presentation" v-bind:class="{ active: type === 1 }"><a href="javascript:void(0)" v-on:click="type = 1">원리금균등상환</a></li>
+				<li role="presentation" v-bind:class="{ active: type === 2 }"><a href="javascript:void(0)" v-on:click="type = 2">원금균등상환</a></li>
+				<li role="presentation" v-bind:class="{ active: type === 3 }"><a href="javascript:void(0)" v-on:click="type = 3">원금만기일시상환</a></li>
+			</ul>
+
+			<div v-if="type === 1">
+				<div class="panel panel-primary">
+					<div class="panel-body">가장 일반적인 방법으로, 원금과 이자를 합한 상환금액이 매달 동일합니다.</div>
+				</div>
+			</div>
+			<div v-if="type === 2">
+				<div class="panel panel-primary">
+					<div class="panel-body">매달 원금을 동일하게 상환하므로, 이자는 매달 줄어들게 됩니다. 단, 매달 이자가 다르므로 원금과 이자를 합한 상환금액도 매달 달라집니다.</div>
+				</div>
+			</div>
+			<div v-if="type === 3">
+				<div class="panel panel-primary">
+					<div class="panel-body">대출기간 동안 매달 이자만 상환하고, 대출 만기일에 원금을 일시상환 합니다.</div>
+				</div>
+			</div>
+
+			<div class="rowsPanel">
+				<table class="table table-bordered table-condensed dSummary">
+					<caption>
+						<span>{{ typeText }}</span> <span>계산결과</span>
+						
+							
+						
+					</caption>
+					<thead>
+					<tr>
+						<th scope="col">대출금</th>
+						<th scope="col">대출기간</th>
+						<th scope="col">대출금리</th>
+						<th scope="col">거치기간</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td><span>{{ moneyNumber }}</span></td>
+						<td><span>{{ period }}</span> <span>개월</span></td>
+						<td><span>{{ rate }}</span>%</td>
+						<td><span>{{ term }}</span> <span>개월</span></td>
+					</tr>
+					</tbody>
+					<thead>
+					<tr>
+						<th scope="col">{{ summaryText }}</th>
+						<th scope="col">총 이자액</th>
+						<th scope="col" colspan="2">원금 및 총이자액</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td><span>{{ loanMonth }}</span></td>
+						<td><span>{{ loanRateAmt }}</span></td>
+						<td colspan="2"><span>{{ loanTotalAmt }}</span></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="dAdBox dTop">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- 계산기 상단 -->
+				<ins class="adsbygoogle"
+				     
+				     data-ad-client="ca-pub-8163803188491150"
+				     data-ad-slot="7514376222"
+				     data-ad-format="auto"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+
+			<div class="rowsPanel">
+				
+				<div class="share-sns twitter facebook googleplus band line kakaostory kakaotalk" data-kakao-api="029c009364ec8062ee3851bb41fcb0c7" data-facebook-app-id="332421137172007"></div>
+
+				<table class="table table-striped table-bordered table-condensed dRows" id="cRows">
+					<thead>
+					<tr>
+						<th>회차</th>
+						<th>상환금</th>
+						<th>납입원금</th>
+						<th>이자</th>
+						<th>납입원금계</th>
+						<th>잔금</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr v-for="row in rows">
+						<td>{{ row.num }}</td>
+						<td>{{ row.payments }}</td>
+						<td>{{ row.principal }}</td>
+						<td>{{ row.interest }}</td>
+						<td>{{ row.total }}</td>
+						<td>{{ row.balance }}</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<section class="dTerms" v-bind:class="{ calced: rows.length > 0 }">
+			<div class="panel panel-primary">
+				<div class="panel-heading">대출금 상환 방식</div>
+				<div class="panel-body">
+					<div class="bs-callout bs-callout-info">
+						<h4><a href="/terms/원리금균등분할상환/">원리금 균등 분할 상환 <span>상세보기</span></a></h4>
+						일반적으로 사용되는 상환 방식으로 매기간 원금과 이자의 합계가 균등한 저당입니다.
+						초기에는 원리금 중 이자가 차지하는 부분이 많으나 후기에는 원금상환 비중이 커지면 대출만기 일자에 대출원금은 완전히 상환됩니다.
+					</div>
+					<div class="bs-callout bs-callout-info">
+						<h4><a href="/terms/원금균등분할상환/">원금 균등 분할 상환 <span>상세보기</span></a></h4>
+						대출원금을 대출 기간으로 나눈 할부 상환금에 월별잔고에 대한 이자를 합산하여 납부하는 방식입니다.
+						원금은 동일하나 이자지불액은 원금을 갚아나가면서 조금씩 줄어듦에 따라 매 기간 적어지게 됩니다.
+					</div>
+					<div class="bs-callout bs-callout-info">
+						<h4><a href="/terms/원금만기일시상환/">원금 만기 일시 상환 (만기 상환 저당) <span>상세보기</span></a></h4>
+						대출 기간 중에는 이자만 지불하다가 만기일에 대출 전액을 상환하는 방식을 말하며 "일시 상환 대출" 또는 인터리스트 온리 모기지(interest only mortgage)라고도 합니다.
+						상환 기간에는 대출 원금을 전혀 상환하지 않기 때문에 총 이자가 크므로 이자 비용 부담이 가장 큰 방법입니다.
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	</section>
+</div>
+<nav id="cSide" class="slideout-menu">
+	<div class="dSideBox">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- 계산기 중앙 -->
+		<ins class="adsbygoogle"
+		     
+		     data-ad-client="ca-pub-8163803188491150"
+		     data-ad-slot="8991109421"
+		     data-ad-format="auto"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		<form action="https://www.google.com/search" method="get" target="_blank" class="dFormSearch">
+			<fieldset>
+				<input type="hidden" name="sitesearch" value="https://loan.asamaru.net">
+				<legend>검색하기 폼</legend>
+				<label class="dIcon">검색하기</label>
+				<input type="text" name="q" value="" placeholder="Search"/>
+			</fieldset>
+		</form>
+
+		<dl class="dPages">
+			<dt>대출금 상환 방식</dt>
+			<dd>
+				<ul>
+					<li><a href="/terms/원리금균등분할상환/">원리금 균등 분할 상환</a></li>
+					<li><a href="/terms/원금균등분할상환/">원금 균등 분할 상환</a></li>
+					<li><a href="/terms/원금만기일시상환/">원금 만기 일시 상환</a></li>
+				</ul>
+			</dd>
+		</dl>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<dl v-cloak id="cCalcHistory">
+			<dt>
+									최근 계산 이력
+							</dt>
+			<dd>
+				<ol>
+					<li v-for="(row, index) in calcHistory">
+						<a href="javascript:void(0);" v-on:click="calcByArgs(row.type, row.money, row.rate, row.period, row.term)">
+							<span v-html="printHistory(index, row)"></span>
+						</a>
+					</li>
+				</ol>
+			</dd>
+		</dl>
+
+		<div class="cBtnList">
+			<a href="/area/" class="btn btn-block btn-warning cBtnArea">평수 / 면적 계산기</a>
+		</div>
+
+		<div class="cBtnList">
+							<a href="/en/" class="btn btn-block btn-success">English</a>
+					</div>
+	</div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+<footer>
+	hosted by <a href="https://github.com/"><em>Github</em></a> / Posted by <a href="mailto:asamaru@asamaru.net"><em>Asamaru</em></a>
+</footer>
+
+
+
+
+
+
+</body>
+</html>
