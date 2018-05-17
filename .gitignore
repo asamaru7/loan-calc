@@ -2,3 +2,5 @@
 *.iml
 out
 gen
+# OSX에서 한글 NFD 문제로 추가 파일로 인식하는 것을 막기 위함 : linux에서 파일 강제 추가 필요
+terms/원*
