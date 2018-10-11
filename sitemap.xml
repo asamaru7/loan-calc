@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://loan.asamaru.net/area/</loc><lastmod>2018-09-18T16:18:32+09:00</lastmod></url>
+<url><loc>https://loan.asamaru.net/en/</loc><lastmod>2018-10-11T22:40:06+09:00</lastmod></url>
+<url><loc>https://loan.asamaru.net/terms/원금만기일시상환/</loc><lastmod>2017-06-21T13:50:43+09:00</lastmod></url>
 <url><loc>https://loan.asamaru.net/terms/원금균등분할상환/</loc><lastmod>2017-06-21T13:50:43+09:00</lastmod></url>
 <url><loc>https://loan.asamaru.net/terms/원리금균등분할상환/</loc><lastmod>2017-06-21T13:50:43+09:00</lastmod></url>
-<url><loc>https://loan.asamaru.net/terms/원금만기일시상환/</loc><lastmod>2017-06-21T13:50:43+09:00</lastmod></url>
-<url><loc>https://loan.asamaru.net/en/</loc><lastmod>2018-10-11T22:40:06+09:00</lastmod></url>
-<url><loc>https://loan.asamaru.net/archives/</loc><lastmod>2018-10-11T22:40:52+09:00</lastmod></url>
+<url><loc>https://loan.asamaru.net/terms/1/</loc><lastmod>2018-10-11T22:53:40+09:00</lastmod></url>
+<url><loc>https://loan.asamaru.net/archives/</loc><lastmod>2018-10-11T22:53:40+09:00</lastmod></url>
 </urlset>
