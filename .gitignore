@@ -8,3 +8,8 @@ gen
 #!/res/js/min/x*
 #/res/css/min/*
 #!/res/css/min/x*
+
+# github security alter 방지
+res/bower/bootstrap/Gemfile
+res/bower/bootstrap/Gemfile.lock
+res/bower/store-js/package.json
