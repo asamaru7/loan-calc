@@ -61,7 +61,7 @@ header > .dProfile > h1 { font-size:16px; margin-top:7px; font-weight:bold; marg
 header > .dProfile > p { /* width:100%; */ font-size:12px; color:#aaa; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; margin-top:6px; }
 section.dMainBody { max-width:1160px; min-height:100px; margin:0 auto; padding:0 20px; position:relative; }
 section.dMainBody > div.dWrapContent { float:left; width:100%; }
-#cMainPanel { min-height:100px; margin-right:330px; clear:both; overflow-x:auto; overflow-y: visible; }
+#cMainPanel { min-height:100px; margin-right:330px; clear:both; }
 /* ------------------------------------------------------------------------------------------------- */
 /* footer.blade.php */
 footer { clear:both; height:50px; font-size:12px; line-height:50px; text-align:center; background-color:#f0f0f0; color:#aaa; position:relative; z-index:1002; margin-top:30px; }
@@ -228,7 +228,7 @@ body.cEn #cSide .cBtnArea { display:none; }
 		min-height:100vh;
 	}
 	.slideout-open, .slideout-open body, .slideout-open .slideout-panel { overflow:hidden; }
-	.slideout-open .slideout-menu { display:block; }
+	amp-sidebar .slideout-menu, .slideout-open .slideout-menu { display:block; }
 }
 /* -----------------------------------------------
  * Vue.js */
