@@ -34,7 +34,6 @@ h1 > div a { font-size:14px; }
 	/*.dArea .dResult .panel-danger { min-width:300px; max-width:320px; margin:0 auto; }*/
 	.dArea .dFormBox { max-width:650px; }
 	.dArea .dTrans { float:none; margin:0 auto; }
-	.dArea .dAdBox.dTop .adsbygoogle { width:300px; height:250px; margin: 0 auto; }
 }
 @media screen and (max-width:360px) {
 	body { padding:24px 5px; }
@@ -44,4 +43,11 @@ h1 > div a { font-size:14px; }
 	.col-xs-10 { width:80%; }
 	.dArea .dRows th { font-size:11px; }
 	.dArea .dRows td { font-size:10px; }
+}
+/* 상단 광고 */
+@media only screen and (max-width:450px) {
+	.dArea .dAdBox.dTop .adsbygoogle { margin:0 auto; width:336px; height:280px; }
+}
+@media only screen and (max-width:359px) {
+	.dArea .dAdBox.dTop .adsbygoogle { margin:0 auto; width:300px; height:250px; }
 }
