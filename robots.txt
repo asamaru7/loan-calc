@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://loan.asamaru.net/sitemap.xml
