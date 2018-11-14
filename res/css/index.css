@@ -75,18 +75,18 @@ body section.dMainBody { max-width:none; }
 }
 /* -----------------------------------------------
  * 애드센스 */
-.dAdBox { margin-bottom:20px; max-width:100%; overflow:hidden; }
+.gad-box { margin-bottom:20px; max-width:100%; overflow:hidden; }
 /* 계산기 상단 */
-/*.dLoan .dFormBox .dAdBox.dTop .adsbygoogle { display:block; margin:0 auto; width:320px; height:100px; }
+/*.dLoan .dFormBox .gad-box.dTop .adsbygoogle { display:block; margin:0 auto; width:320px; height:100px; }
 @media only screen and (max-width:339px) {
-	.dLoan .dFormBox .dAdBox.dTop .adsbygoogle { width:auto; height:auto; }
+	.dLoan .dFormBox .gad-box.dTop .adsbygoogle { width:auto; height:auto; }
 }*/
-.dLoan .dAdBox.dTop .adsbygoogle { display:block; margin:30px auto 30px auto; width:auto; height:auto; }
+.dLoan .gad-box.dTop .adsbygoogle { display:block; margin:30px auto 30px auto; width:auto; height:auto; }
 @media only screen and (max-width:359px) {
-	.dLoan .dAdBox.dTop .adsbygoogle { width:300px; height:250px; }
+	.dLoan .gad-box.dTop .adsbygoogle { width:300px; height:250px; }
 }
 /* 계신버튼 하단 */
-.dLoan .dFormBox .dAdBox .adsbygoogle { display:block; margin:0 auto 30px auto; width:336px; height:280px; }
+.dLoan .dFormBox .gad-box .adsbygoogle { display:block; margin:0 auto 30px auto; width:336px; height:280px; }
 @media only screen and (max-width:359px) {
-	.dLoan .dFormBox .dAdBox .adsbygoogle { width:300px; height:250px; }
+	.dLoan .dFormBox .gad-box .adsbygoogle { width:300px; height:250px; }
 }

@@ -4,7 +4,7 @@ body { padding:24px 25px; /*background:#eee;*/ color:#444; }
 footer { border-top:#ccc solid 1px; margin:30px 0 20px 0; padding-top:20px; }
 h1 { border-bottom:#ccc solid 1px; margin-top:0; margin-bottom:20px; padding-bottom:10px; font-size:24px; }
 h1 > div a { font-size:14px; }
-.dAdBox { margin-bottom:20px; }
+.gad-box { margin-bottom:20px; }
 /* loan */
 .dArea { padding:0; min-width:320px; max-width:1200px; margin:0 auto; }
 .dArea .dFormBox { margin-bottom:15px; }
@@ -46,8 +46,8 @@ h1 > div a { font-size:14px; }
 }
 /* 상단 광고 */
 @media only screen and (max-width:450px) {
-	.dArea .dAdBox.dTop .adsbygoogle { margin:0 auto; width:336px; height:280px; }
+	.dArea .gad-box.dTop .adsbygoogle { margin:0 auto; width:336px; height:280px; }
 }
 @media only screen and (max-width:359px) {
-	.dArea .dAdBox.dTop .adsbygoogle { margin:0 auto; width:300px; height:250px; }
+	.dArea .gad-box.dTop .adsbygoogle { margin:0 auto; width:300px; height:250px; }
 }

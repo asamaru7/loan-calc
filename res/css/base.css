@@ -48,6 +48,14 @@ hr { border:0 none; border-bottom:#ebebeb solid 1px; margin:0; padding:0; }
 .markdown-body ul, .markdown-body li { list-style:disc; }
 .markdown-body img { height:inherit; }
 /* height="" 가 지정된 경우 높이가 고정되는 문제를 수정하기 위함 */
+
+input, select {
+	/* disable input focus zoom */
+	/* https://codepen.io/jakob-e/pen/yakBwJ */
+	font-size: 1em;
+	transform-origin: top left;
+	transform: scale(1);
+}
 /* ------------------------------------------------------------------------------------------------- */
 /* header.blade.php */
 header { z-index:1000; border-bottom:1px solid #ebebeb; background-color:#fff; background-color:rgba(255, 255, 255, .90); }

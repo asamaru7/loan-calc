@@ -11,19 +11,19 @@ article.dArticle dl.dTags > dt,
 article.dArticle dl.dTags > dd { display:inline-block; }
 /* -----------------------------------------------
  * 애드센스 */
-article.dArticle .dAdBox { margin:30px auto; max-width:100%; overflow:hidden; }
-article.dArticle .dAdBox .adsbygoogle { display:block; margin:0 auto; min-height:100px; }
+article.dArticle .gad-box { margin:30px auto; max-width:100%; overflow:hidden; }
+article.dArticle .gad-box .adsbygoogle { display:block; margin:0 auto; min-height:100px; }
 /* 본문 상단 */
 @media only screen and (max-width:820px) {
-	article.dArticle .dAdBox.dTop .adsbygoogle { width:320px; height:100px; }
+	article.dArticle .gad-box.dTop .adsbygoogle { width:320px; height:100px; }
 }
 @media only screen and (max-width:339px) {
-	article.dArticle .dAdBox.dTop .adsbygoogle { width:auto; height:auto; }
+	article.dArticle .gad-box.dTop .adsbygoogle { width:auto; height:auto; }
 }
 /* 본문 하단 */
 @media only screen and (max-width:820px) {
-	article.dArticle .dAdBox .adsbygoogle { width:336px; height:280px; }
+	article.dArticle .gad-box .adsbygoogle { width:336px; height:280px; }
 }
 @media only screen and (max-width:359px) {
-	article.dArticle .dAdBox .adsbygoogle { width:300px; height:250px; }
+	article.dArticle .gad-box .adsbygoogle { width:300px; height:250px; }
 }
