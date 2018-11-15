@@ -1,7 +1,1 @@
-amp-ad.dAmpAdPostTop { margin-bottom:30px; }
-amp-ad.dAmpAdSiteBottom { clear:both; margin-top:30px; }
-@media only screen and (max-width:820px) {
-	amp-sidebar > nav#cSide { float:none; position:static; width:300px; box-shadow:none; padding-top:50px; }
-	#menu-button { display:block; }
-	.dMainBody nav#cSide { display:none; }
-}
+amp-ad.dAmpAdPostTop{margin-bottom:30px}amp-ad.dAmpAdSiteBottom{clear:both;margin-top:30px}@media only screen and (max-width:820px){amp-sidebar>nav#sidebar{float:none;position:static;width:300px;-webkit-box-shadow:none;box-shadow:none;padding-top:50px}#menu-button{display:block}.dMainBody nav#sidebar{display:none}}

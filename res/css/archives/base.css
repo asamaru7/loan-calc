@@ -1,16 +1,1 @@
-section.dArchives { padding-top:7px;}
-section.dArchives dl { margin-bottom:30px; }
-section.dArchives dt { font-weight:bold; border-bottom:#ebebeb solid 1px; padding-bottom:5px; margin-bottom:10px; }
-section.dArchives dd { display:inline-block; margin-right:10px; }
-section.dArchives dd span { font-size:11px; color:#999; padding-left:4px; letter-spacing:1px; }
-/* 목록 */
-h2.dTitle { padding-top:20px; border-bottom:#ebebeb solid 1px; padding-bottom:10px; margin-bottom:17px; }
-h3.dSubTitle { padding-top:20px; border-bottom:#ebebeb solid 1px; padding-bottom:10px; margin-bottom:17px; }
-h4.dMonth { float:left; margin-top:5px; }
-h4.dEmpty { text-align:center; color:#999; }
-section.dDateList { padding-left:70px; margin-bottom:17px; border-bottom:1px solid #ebebeb; }
-section.dDateList.dMonth { padding-left:0; }
-section.dDateList ul.dArticles.date > li { padding:5px 0; border:0 none; }
-section.dDateList ul.dArticles.date > li i { font-weight:bold; }
-section.dDateList ul.dArticles.date > li time { color:#999; width:70px; float:left; white-space:nowrap; }
-section.dDateList ul.dArticles.date > li span.dTtl { margin-left:75px; display:block; }
+section.dArchives{padding-top:7px}section.dArchives dl{margin-bottom:30px}section.dArchives dt{font-weight:700;border-bottom:1px solid #ebebeb;padding-bottom:5px;margin-bottom:10px}section.dArchives dd{display:inline-block;margin-right:10px}section.dArchives dd span{font-size:11px;color:#999;padding-left:4px;letter-spacing:1px}h2.dTitle,h3.dSubTitle{padding-top:20px;border-bottom:1px solid #ebebeb;padding-bottom:10px;margin-bottom:17px}h4.dMonth{float:left;margin-top:5px}h4.dEmpty{text-align:center;color:#999}section.dDateList{padding-left:70px;margin-bottom:17px;border-bottom:1px solid #ebebeb}section.dDateList.dMonth{padding-left:0}section.dDateList ul.dArticles.date>li{padding:5px 0;border:0 none}section.dDateList ul.dArticles.date>li i{font-weight:700}section.dDateList ul.dArticles.date>li time{color:#999;width:70px;float:left;white-space:nowrap}section.dDateList ul.dArticles.date>li span.dTtl{margin-left:75px;display:block}
