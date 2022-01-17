@@ -13,3 +13,4 @@ gen
 res/bower/bootstrap/Gemfile
 res/bower/bootstrap/Gemfile.lock
 res/bower/store-js/package.json
+res/mix-manifest.json
