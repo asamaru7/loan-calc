@@ -1,0 +1,36 @@
+{
+	"name": "원리금균등상환/원금균등상환/원금만기일시상환에 대한 이자 및 상환금 계산",
+	"short_name": "대출계산기",
+	"icons": [
+		{
+			"src": "/img/icon/180.png",
+			"sizes": "180x180",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/icon/76.png",
+			"sizes": "76x76",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/icon/120.png",
+			"sizes": "120x120",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/icon/152.png",
+			"sizes": "152x152",
+			"type": "image/png"
+		},
+		{
+			"src": "/maskable_icon_x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	],
+	"start_url": "/",
+	"display": "minimal-ui",
+	"background_color": "#ffffff",
+	"theme_color": "#ee152b"
+}

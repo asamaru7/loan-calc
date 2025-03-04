@@ -1,535 +1,563 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-					
-			
-	<title>평수 / 면적 계산기</title>
-	<meta charset='utf-8'>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	<link rel="canonical" href="https://loan.asamaru.net/area/">
-
-	<meta name="author" content="아사마루">
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
-
-	<!-- //opengraphprotocol.org/ -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://loan.asamaru.net/area/">
-	<meta property="og:title" content="평수 / 면적 계산기">
-	<meta property="og:description" content="평/㎡(제곱미터) 단위 환산 및 변환">
-
-	<meta name="keywords" content="면젹, 평, 평수, m2, ㎡, 제곱미터 단위 환산 및 변환"/>
-	<meta name="description" content="평/㎡(제곱미터) 단위 환산 및 변환"/>
-
-	<meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0">
-	<!--<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>-->
-
-	<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
-	<link rel="dns-prefetch" href="//www.google-analytics.com">
-
-	<!--[if lt IE 9]>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-	<![endif]-->
-
-	<link href="/res/css/min/4fa78bab683f90d39634604d6b48add8.css" type="text/css" rel="stylesheet" />
-<script src="/res/js/min/bf71f03545f62b0a053a7712ad5df5e2.js" async="true" type="text/javascript"></script>
-</head>
-<body>
-
-<div class="dArea pAreaMain">
-	<h1>
-		<span>평수 / 면적 계산기</span>
-		<div class="pull-right"><a href="https://calculator.asamaru.net">계산기 모음</a></div>
-	</h1>
-
-	<div class="gad-box dTop">
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-8163803188491150"
-		     data-ad-slot="7514376222"
-		     data-full-width-responsive="false"
-		     data-ad-format="auto"></ins>
-		<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>
-
-	<div class="dFormBox">
-		<form class="form-horizontal">
-			<div class="form-group">
-				<label class="col-xs-2 control-label">㎡ → 평</label>
-
-				<div class="col-xs-10">
-					<div class="input-group col-xs-6">
-						<input type="number" class="form-control" v-model="m2"/>
-						<div class="input-group-addon">㎡</div>
-					</div>
-					<div class="input-group col-xs-1">
-						→
-					</div>
-					<div class="input-group col-xs-4">
-						<span class="help-block text-right dWon"><span class="text-danger" v-cloak>{{ pyungText }}</span> 평</span>
-					</div>
-					<div class="dUtilBtn">
-						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="m2 = 59.5">59.5</button>
-						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="m2 = 79.34">79.34</button>
-						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="m2 = 92.56">92.56</button>
-						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="m2 = 105.79">105.79</button>
-						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="m2 = 119.01">119.01</button>
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-xs-2 control-label">평 → ㎡</label>
-
-				<div class="col-xs-10">
-					<div class="input-group col-xs-6">
-						<input type="number" class="form-control" v-model="pyung"/>
-						<div class="input-group-addon">평</div>
-					</div>
-					<div class="input-group col-xs-1">
-						→
-					</div>
-					<div class="input-group col-xs-4">
-						<span class="help-block text-right dWon"><span class="text-danger" v-cloak>{{ m2Text }}</span> ㎡</span>
-					</div>
-					<div class="dUtilBtn">
-						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="pyung = 18;">18평</button>
-						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="pyung = 24;">24평</button>
-						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="pyung = 28;">28평</button>
-						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="pyung = 32;">32평</button>
-						<button type="button" tabindex="-1" class="btn btn-default btn-sm" v-on:click="pyung = 36;">36평</button>
-					</div>
-				</div>
-			</div>
-		</form>
-	</div>
-
-	
-	<div class="share-sns twitter facebook googleplus band line kakaostory kakaotalk" data-kakao-api="029c009364ec8062ee3851bb41fcb0c7" data-facebook-app-id="332421137172007"></div>
-
-	
-	<div class="nv-openmain" data-title="평수계산기" data-url="https://loan.asamaru.net/area/" data-type="W2"></div>
-	<script async type="text/javascript" src="https://openmain.pstatic.net/js/openmain.js"></script>
-
-	<div class="dResult">
-		<div class="panel panel-danger">
-			<div class="panel-heading"><i class="glyphicon glyphicon-star"></i> 주의사항</div>
-			<div class="panel-body">2007.7.1부터 「계량에 관한 법률」2조 제1항에 따라 ‘평’단위를 사용하지 않습니다.</div>
-		</div>
-		<div class="dTrans">
-			<h3>㎡ / 평 변환표<span>1㎡ = 0.3025평</span></h3>
-			<table summary="제곱미터-평" class="table table-bordered table-striped">
-				<thead>
-				<tr>
-					<th>제곱미터(㎡)</th>
-					<th>평</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>62 ㎡</td>
-					<td>18.76 평</td>
-				</tr>
-				<tr>
-					<td>66 ㎡</td>
-					<td>19.97 평</td>
-				</tr>
-				<tr>
-					<td>69 ㎡</td>
-					<td>20.87 평</td>
-				</tr>
-				<tr>
-					<td>72 ㎡</td>
-					<td>21.78 평</td>
-				</tr>
-				<tr>
-					<td>76 ㎡</td>
-					<td>22.99 평</td>
-				</tr>
-				<tr>
-					<td>79 ㎡</td>
-					<td>23.90 평</td>
-				</tr>
-				<tr>
-					<td>82 ㎡</td>
-					<td>24.81 평</td>
-				</tr>
-				<tr>
-					<td>85 ㎡</td>
-					<td>25.71 평</td>
-				</tr>
-				<tr>
-					<td>89 ㎡</td>
-					<td>26.92 평</td>
-				</tr>
-				<tr>
-					<td>92 ㎡</td>
-					<td>27.83 평</td>
-				</tr>
-				<tr>
-					<td>95 ㎡</td>
-					<td>28.74 평</td>
-				</tr>
-				<tr>
-					<td>99 ㎡</td>
-					<td>29.95 평</td>
-				</tr>
-				<tr>
-					<td>102 ㎡</td>
-					<td>30.86 평</td>
-				</tr>
-				<tr>
-					<td>105 ㎡</td>
-					<td>31.76 평</td>
-				</tr>
-				<tr>
-					<td>109 ㎡</td>
-					<td>32.97 평</td>
-				</tr>
-				<tr>
-					<td>112 ㎡</td>
-					<td>33.88 평</td>
-				</tr>
-				<tr>
-					<td>115 ㎡</td>
-					<td>34.79 평</td>
-				</tr>
-				<tr>
-					<td>118 ㎡</td>
-					<td>35.70 평</td>
-				</tr>
-				<tr>
-					<td>122 ㎡</td>
-					<td>36.91 평</td>
-				</tr>
-				<tr>
-					<td>125 ㎡</td>
-					<td>37.81 평</td>
-				</tr>
-				<tr>
-					<td>128 ㎡</td>
-					<td>38.72 평</td>
-				</tr>
-				<tr>
-					<td>132 ㎡</td>
-					<td>39.93 평</td>
-				</tr>
-				<tr>
-					<td>135 ㎡</td>
-					<td>40.84 평</td>
-				</tr>
-				<tr>
-					<td>138 ㎡</td>
-					<td>41.75 평</td>
-				</tr>
-				<tr>
-					<td>142 ㎡</td>
-					<td>42.96 평</td>
-				</tr>
-				<tr>
-					<td>145 ㎡</td>
-					<td>43.86 평</td>
-				</tr>
-				<tr>
-					<td>148 ㎡</td>
-					<td>44.77 평</td>
-				</tr>
-				<tr>
-					<td>152 ㎡</td>
-					<td>45.98 평</td>
-				</tr>
-				<tr>
-					<td>155 ㎡</td>
-					<td>46.89 평</td>
-				</tr>
-				<tr>
-					<td>158 ㎡</td>
-					<td>47.80 평</td>
-				</tr>
-				<tr>
-					<td>161 ㎡</td>
-					<td>48.70 평</td>
-				</tr>
-				<tr>
-					<td>165 ㎡</td>
-					<td>49.91 평</td>
-				</tr>
-				<tr>
-					<td>168 ㎡</td>
-					<td>50.82 평</td>
-				</tr>
-				<tr>
-					<td>171 ㎡</td>
-					<td>51.73 평</td>
-				</tr>
-				<tr>
-					<td>175 ㎡</td>
-					<td>52.94 평</td>
-				</tr>
-				<tr>
-					<td>178 ㎡</td>
-					<td>53.85 평</td>
-				</tr>
-				<tr>
-					<td>181 ㎡</td>
-					<td>54.75 평</td>
-				</tr>
-				<tr>
-					<td>185 ㎡</td>
-					<td>55.96 평</td>
-				</tr>
-				<tr>
-					<td>188 ㎡</td>
-					<td>56.87 평</td>
-				</tr>
-				<tr>
-					<td>191 ㎡</td>
-					<td>57.78 평</td>
-				</tr>
-				<tr>
-					<td>195 ㎡</td>
-					<td>58.99 평</td>
-				</tr>
-				<tr>
-					<td>198 ㎡</td>
-					<td>59.90 평</td>
-				</tr>
-				<tr>
-					<td>199 ㎡</td>
-					<td>60.20 평</td>
-				</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="gad-box">
-			<!-- 평수 계산기 중앙 -->
-			<script>
-				var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-				if (width <= 960) {
-					document.write('<s' + 'cript async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
-					document.write('<i' + 'ns class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8163803188491150" data-ad-slot="8991109421" data-ad-format="auto"><' + '/ins>');
-					(adsbygoogle = window.adsbygoogle || []).push({});
+	<head>
+		<meta charset="utf-8" />
+		<title>평수 / 면적 계산기</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0" />
+		<link href="//www.googletagmanager.com" rel="dns-prefetch" />
+		<link href="//pagead2.googlesyndication.com" rel="dns-prefetch" />
+		<link href="//googleads.g.doubleclick.net" rel="dns-prefetch" />
+		<meta name="author" content="아사마루" />
+		<meta name="keywords" content="면젹,평,평수,m2,㎡,제곱미터 단위 환산 및 변환" />
+		<meta name="description" content="평/㎡(제곱미터) 단위 환산 및 변환" />
+		<meta name="referrer" content="always" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
+		<meta name="theme-color" content="#ee152b" />
+		<link rel="shortcut icon" type="image/x-icon" href="https://loan.asamaru.net/favicon.ico" />
+		<link rel="manifest" href="/manifest.json" />
+		<link rel="canonical" href="https://loan.asamaru.net/area/" />
+		<link rel="alternate" type="application/rss+xml" title="대출 이자 계산기" href="https://loan.asamaru.net/atom.xml" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/img/icon/180.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="/img/icon/76.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="/img/icon/120.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="/img/icon/152.png" />
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8163803188491150" crossorigin="anonymous"></script>
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="대출 이자 계산기" />
+		<meta property="og:title" content="평수 / 면적 계산기" />
+		<meta property="og:description" content="평/㎡(제곱미터) 단위 환산 및 변환" />
+		<meta property="og:url" content="https://loan.asamaru.net/area/" />
+		<meta property="og:image" content="https://loan.asamaru.net/img/icon/icon.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@asamaru7" />
+		<meta name="twitter:title" content="평수 / 면적 계산기" />
+		<meta name="twitter:description" content="평/㎡(제곱미터) 단위 환산 및 변환" />
+		<meta property="twitter:image" content="https://loan.asamaru.net/img/icon/icon.png" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"url": "https://loan.asamaru.net/area/",
+				"headline": "평수 / 면적 계산기",
+				"author": {
+					"@type": "Person",
+					"name": "아사마루"
+				},
+				"datePublished": "2025-03-04T17:54:48+09:00",
+				"dateModified": "2025-03-04T17:54:48+09:00",
+				"image": {
+					"@type": "ImageObject",
+					"url": "https://loan.asamaru.net/img/icon/icon.696.png",
+					"width": 696,
+					"height": 696
+				},
+				"publisher": {
+					"@type": "Organization",
+					"name": "아사마루",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://loan.asamaru.net/img/icon/180.png",
+						"width": 180,
+						"height": 180
+					}
+				},
+				"mainEntityOfPage": {
+					"@type": "WebPage",
+					"@id": "https://loan.asamaru.net/area/"
 				}
-			</script>
-		</div>
-		<div class="dTrans">
-			<h3>평 / ㎡ 변환표<span>1평 = 3.31㎡</span></h3>
-			<table summary="평-제곱미터" class="table table-bordered table-striped">
-				<thead>
-				<tr>
-					<th>평</th>
-					<th>제곱미터(㎡)</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>18 평</td>
-					<td>59.50 ㎡</td>
-				</tr>
-				<tr>
-					<td>19 평</td>
-					<td>62.81 ㎡</td>
-				</tr>
-				<tr>
-					<td>20 평</td>
-					<td>66.12 ㎡</td>
-				</tr>
-				<tr>
-					<td>21 평</td>
-					<td>69.42 ㎡</td>
-				</tr>
-				<tr>
-					<td>22 평</td>
-					<td>72.73 ㎡</td>
-				</tr>
-				<tr>
-					<td>23 평</td>
-					<td>76.03 ㎡</td>
-				</tr>
-				<tr>
-					<td>24 평</td>
-					<td>79.34 ㎡</td>
-				</tr>
-				<tr>
-					<td>25 평</td>
-					<td>82.64 ㎡</td>
-				</tr>
-				<tr>
-					<td>26 평</td>
-					<td>85.95 ㎡</td>
-				</tr>
-				<tr>
-					<td>27 평</td>
-					<td>89.26 ㎡</td>
-				</tr>
-				<tr>
-					<td>28 평</td>
-					<td>92.56 ㎡</td>
-				</tr>
-				<tr>
-					<td>29 평</td>
-					<td>95.87 ㎡</td>
-				</tr>
-				<tr>
-					<td>30 평</td>
-					<td>99.17 ㎡</td>
-				</tr>
-				<tr>
-					<td>31 평</td>
-					<td>102.48 ㎡</td>
-				</tr>
-				<tr>
-					<td>32 평</td>
-					<td>105.79 ㎡</td>
-				</tr>
-				<tr>
-					<td>33 평</td>
-					<td>109.09 ㎡</td>
-				</tr>
-				<tr>
-					<td>34 평</td>
-					<td>112.40 ㎡</td>
-				</tr>
-				<tr>
-					<td>35 평</td>
-					<td>115.70 ㎡</td>
-				</tr>
-				<tr>
-					<td>36 평</td>
-					<td>119.01 ㎡</td>
-				</tr>
-				<tr>
-					<td>37 평</td>
-					<td>122.31 ㎡</td>
-				</tr>
-				<tr>
-					<td>38 평</td>
-					<td>125.62 ㎡</td>
-				</tr>
-				<tr>
-					<td>39 평</td>
-					<td>128.93 ㎡</td>
-				</tr>
-				<tr>
-					<td>40 평</td>
-					<td>132.23 ㎡</td>
-				</tr>
-				<tr>
-					<td>41 평</td>
-					<td>135.54 ㎡</td>
-				</tr>
-				<tr>
-					<td>42 평</td>
-					<td>138.84 ㎡</td>
-				</tr>
-				<tr>
-					<td>43 평</td>
-					<td>142.15 ㎡</td>
-				</tr>
-				<tr>
-					<td>44 평</td>
-					<td>145.45 ㎡</td>
-				</tr>
-				<tr>
-					<td>45 평</td>
-					<td>148.76 ㎡</td>
-				</tr>
-				<tr>
-					<td>46 평</td>
-					<td>152.07 ㎡</td>
-				</tr>
-				<tr>
-					<td>47 평</td>
-					<td>155.37 ㎡</td>
-				</tr>
-				<tr>
-					<td>48 평</td>
-					<td>158.68 ㎡</td>
-				</tr>
-				<tr>
-					<td>49 평</td>
-					<td>161.98 ㎡</td>
-				</tr>
-				<tr>
-					<td>50 평</td>
-					<td>165.29 ㎡</td>
-				</tr>
-				<tr>
-					<td>51 평</td>
-					<td>168.60 ㎡</td>
-				</tr>
-				<tr>
-					<td>52 평</td>
-					<td>171.90 ㎡</td>
-				</tr>
-				<tr>
-					<td>53 평</td>
-					<td>175.21 ㎡</td>
-				</tr>
-				<tr>
-					<td>54 평</td>
-					<td>178.51 ㎡</td>
-				</tr>
-				<tr>
-					<td>55 평</td>
-					<td>181.82 ㎡</td>
-				</tr>
-				<tr>
-					<td>56 평</td>
-					<td>185.12 ㎡</td>
-				</tr>
-				<tr>
-					<td>57 평</td>
-					<td>188.43 ㎡</td>
-				</tr>
-				<tr>
-					<td>58 평</td>
-					<td>191.74 ㎡</td>
-				</tr>
-				<tr>
-					<td>59 평</td>
-					<td>195.04 ㎡</td>
-				</tr>
-				<tr>
-					<td>60 평</td>
-					<td>198.35 ㎡</td>
-				</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="gad-box">
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- 평수 계산기 하단 -->
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-8163803188491150"
-		     data-ad-slot="1467842621"
-		     data-ad-format="auto"></ins>
-		<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
+			}
 		</script>
-	</div>
-</div>
-
-
-
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPPW6284KZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TPPW6284KZ');
-</script>
-</body>
+		<link href="/css/min/d84b7e2ee142ad039489253ec96779a4.css" type="text/css" rel="stylesheet" />
+		<script src="/js/min/60f46ebc8dae57e1e01772fed701be13.js" async type="text/javascript"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPPW6284KZ"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "G-TPPW6284KZ");
+		</script>
+	</head>
+	<body>
+		<div class="area-main">
+			<h1>
+				평수 / 면적 계산기
+				<span class="float-end fs-6 mt-2"><a href="https://calculator.asamaru.net">계산기 모음</a></span>
+			</h1>
+			<div class="top-box">
+				<div class="gad-box">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8163803188491150" crossorigin="anonymous"></script>
+					<ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-8163803188491150" data-ad-slot="7514376222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+			<div class="form-container">
+				<form class="container">
+					<div class="form-group row mb-3">
+						<label class="col-2 control-label">㎡ → 평</label>
+						<div class="col">
+							<div class="row">
+								<div class="col-6">
+									<div class="input-group">
+										<input type="number" class="form-control" v-model="m2" />
+										<div class="input-group-text">㎡</div>
+									</div>
+								</div>
+								<div class="col-1 arrow">→</div>
+								<div class="col-5 text-end result">
+									<span class="help-block korean-text">
+										<span class="text-danger" v-cloak>{{ pyungText }}</span>
+										평
+									</span>
+								</div>
+							</div>
+							<div class="mt-2">
+								<button type="button" tabindex="-1" class="btn btn-outline-secondary btn-sm me-1" v-on:click="m2 = 59.5">59.5</button>
+								<button type="button" tabindex="-1" class="btn btn-outline-secondary btn-sm me-1" v-on:click="m2 = 79.34">79.34</button>
+								<button type="button" tabindex="-1" class="btn btn-outline-secondary btn-sm me-1" v-on:click="m2 = 92.56">92.56</button>
+								<button type="button" tabindex="-1" class="btn btn-outline-secondary btn-sm me-1" v-on:click="m2 = 105.79">105.79</button>
+								<button type="button" tabindex="-1" class="btn btn-outline-secondary btn-sm me-1" v-on:click="m2 = 119.01">119.01</button>
+							</div>
+						</div>
+					</div>
+					<a class="btn btn-outline-primary w-100 mb-4" href="#m2-pyung">㎡ / 평 변환표 바로가기</a>
+					<div class="form-group row mb-3">
+						<label class="col-2 control-label">평 → ㎡</label>
+						<div class="col">
+							<div class="row">
+								<div class="col-6">
+									<div class="input-group">
+										<input type="number" class="form-control" v-model="pyung" />
+										<div class="input-group-text">평</div>
+									</div>
+								</div>
+								<div class="col-1 arrow">→</div>
+								<div class="col-5 text-end result">
+									<span class="help-block korean-text">
+										<span class="text-danger" v-cloak>{{ m2Text }}</span>
+										㎡
+									</span>
+								</div>
+							</div>
+							<div class="mt-2">
+								<button type="button" tabindex="-1" class="btn btn-outline-secondary btn-sm me-1" v-on:click="pyung = 18;">18평</button>
+								<button type="button" tabindex="-1" class="btn btn-outline-secondary btn-sm me-1" v-on:click="pyung = 24;">24평</button>
+								<button type="button" tabindex="-1" class="btn btn-outline-secondary btn-sm me-1" v-on:click="pyung = 28;">28평</button>
+								<button type="button" tabindex="-1" class="btn btn-outline-secondary btn-sm me-1" v-on:click="pyung = 32;">32평</button>
+								<button type="button" tabindex="-1" class="btn btn-outline-secondary btn-sm me-1" v-on:click="pyung = 36;">36평</button>
+							</div>
+						</div>
+					</div>
+					<a class="btn btn-outline-primary w-100 mb-3" href="#pyung-m2">평 / ㎡ 변환표 바로가기</a>
+				</form>
+			</div>
+			<div class="result-table mt-4">
+				<div class="card mb-4">
+					<div class="card-header bg-danger-subtle text-danger">★ 주의사항</div>
+					<div class="card-body">2007.7.1부터 「계량에 관한 법률」2조 제1항에 따라 ‘평’단위를 사용하지 않습니다.</div>
+				</div>
+				<div class="gad-box">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8163803188491150" crossorigin="anonymous"></script>
+					<ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-8163803188491150" data-ad-slot="8991109421" data-ad-format="auto" data-full-width-responsive="true"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+				<div class="text-center mt-4 mb-4">
+					<div class="share-sns twitter facebook googleplus band line kakaotalk" data-kakao-api="029c009364ec8062ee3851bb41fcb0c7" data-facebook-app-id="332421137172007"></div>
+					<div class="nv-openmain" data-title="평수계산기" data-url="https://loan.asamaru.net/area/" data-type="W2"></div>
+					<script async type="text/javascript" src="https://openmain.pstatic.net/js/openmain.js"></script>
+				</div>
+				<div id="m2-pyung">
+					<h3>
+						㎡ / 평 변환표
+						<span class="fs-6 ps-2 text-warning">1㎡ = 0.3025평</span>
+					</h3>
+					<table summary="제곱미터-평" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>제곱미터(㎡)</th>
+								<th>평</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>62 ㎡</td>
+								<td>18.76 평</td>
+							</tr>
+							<tr>
+								<td>66 ㎡</td>
+								<td>19.97 평</td>
+							</tr>
+							<tr>
+								<td>69 ㎡</td>
+								<td>20.87 평</td>
+							</tr>
+							<tr>
+								<td>72 ㎡</td>
+								<td>21.78 평</td>
+							</tr>
+							<tr>
+								<td>76 ㎡</td>
+								<td>22.99 평</td>
+							</tr>
+							<tr>
+								<td>79 ㎡</td>
+								<td>23.90 평</td>
+							</tr>
+							<tr>
+								<td>82 ㎡</td>
+								<td>24.81 평</td>
+							</tr>
+							<tr>
+								<td>85 ㎡</td>
+								<td>25.71 평</td>
+							</tr>
+							<tr>
+								<td>89 ㎡</td>
+								<td>26.92 평</td>
+							</tr>
+							<tr>
+								<td>92 ㎡</td>
+								<td>27.83 평</td>
+							</tr>
+							<tr>
+								<td>95 ㎡</td>
+								<td>28.74 평</td>
+							</tr>
+							<tr>
+								<td>99 ㎡</td>
+								<td>29.95 평</td>
+							</tr>
+							<tr>
+								<td>102 ㎡</td>
+								<td>30.86 평</td>
+							</tr>
+							<tr>
+								<td>105 ㎡</td>
+								<td>31.76 평</td>
+							</tr>
+							<tr>
+								<td>109 ㎡</td>
+								<td>32.97 평</td>
+							</tr>
+							<tr>
+								<td>112 ㎡</td>
+								<td>33.88 평</td>
+							</tr>
+							<tr>
+								<td>115 ㎡</td>
+								<td>34.79 평</td>
+							</tr>
+							<tr>
+								<td>118 ㎡</td>
+								<td>35.70 평</td>
+							</tr>
+							<tr>
+								<td>122 ㎡</td>
+								<td>36.91 평</td>
+							</tr>
+							<tr>
+								<td>125 ㎡</td>
+								<td>37.81 평</td>
+							</tr>
+							<tr>
+								<td>128 ㎡</td>
+								<td>38.72 평</td>
+							</tr>
+							<tr>
+								<td>132 ㎡</td>
+								<td>39.93 평</td>
+							</tr>
+							<tr>
+								<td>135 ㎡</td>
+								<td>40.84 평</td>
+							</tr>
+							<tr>
+								<td>138 ㎡</td>
+								<td>41.75 평</td>
+							</tr>
+							<tr>
+								<td>142 ㎡</td>
+								<td>42.96 평</td>
+							</tr>
+							<tr>
+								<td>145 ㎡</td>
+								<td>43.86 평</td>
+							</tr>
+							<tr>
+								<td>148 ㎡</td>
+								<td>44.77 평</td>
+							</tr>
+							<tr>
+								<td>152 ㎡</td>
+								<td>45.98 평</td>
+							</tr>
+							<tr>
+								<td>155 ㎡</td>
+								<td>46.89 평</td>
+							</tr>
+							<tr>
+								<td>158 ㎡</td>
+								<td>47.80 평</td>
+							</tr>
+							<tr>
+								<td>161 ㎡</td>
+								<td>48.70 평</td>
+							</tr>
+							<tr>
+								<td>165 ㎡</td>
+								<td>49.91 평</td>
+							</tr>
+							<tr>
+								<td>168 ㎡</td>
+								<td>50.82 평</td>
+							</tr>
+							<tr>
+								<td>171 ㎡</td>
+								<td>51.73 평</td>
+							</tr>
+							<tr>
+								<td>175 ㎡</td>
+								<td>52.94 평</td>
+							</tr>
+							<tr>
+								<td>178 ㎡</td>
+								<td>53.85 평</td>
+							</tr>
+							<tr>
+								<td>181 ㎡</td>
+								<td>54.75 평</td>
+							</tr>
+							<tr>
+								<td>185 ㎡</td>
+								<td>55.96 평</td>
+							</tr>
+							<tr>
+								<td>188 ㎡</td>
+								<td>56.87 평</td>
+							</tr>
+							<tr>
+								<td>191 ㎡</td>
+								<td>57.78 평</td>
+							</tr>
+							<tr>
+								<td>195 ㎡</td>
+								<td>58.99 평</td>
+							</tr>
+							<tr>
+								<td>198 ㎡</td>
+								<td>59.90 평</td>
+							</tr>
+							<tr>
+								<td>199 ㎡</td>
+								<td>60.20 평</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="pyung-m2">
+					<h3>
+						평 / ㎡ 변환표
+						<span class="fs-6 ps-2 text-warning">1평 = 3.31㎡</span>
+					</h3>
+					<table summary="평-제곱미터" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>평</th>
+								<th>제곱미터(㎡)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>18 평</td>
+								<td>59.50 ㎡</td>
+							</tr>
+							<tr>
+								<td>19 평</td>
+								<td>62.81 ㎡</td>
+							</tr>
+							<tr>
+								<td>20 평</td>
+								<td>66.12 ㎡</td>
+							</tr>
+							<tr>
+								<td>21 평</td>
+								<td>69.42 ㎡</td>
+							</tr>
+							<tr>
+								<td>22 평</td>
+								<td>72.73 ㎡</td>
+							</tr>
+							<tr>
+								<td>23 평</td>
+								<td>76.03 ㎡</td>
+							</tr>
+							<tr>
+								<td>24 평</td>
+								<td>79.34 ㎡</td>
+							</tr>
+							<tr>
+								<td>25 평</td>
+								<td>82.64 ㎡</td>
+							</tr>
+							<tr>
+								<td>26 평</td>
+								<td>85.95 ㎡</td>
+							</tr>
+							<tr>
+								<td>27 평</td>
+								<td>89.26 ㎡</td>
+							</tr>
+							<tr>
+								<td>28 평</td>
+								<td>92.56 ㎡</td>
+							</tr>
+							<tr>
+								<td>29 평</td>
+								<td>95.87 ㎡</td>
+							</tr>
+							<tr>
+								<td>30 평</td>
+								<td>99.17 ㎡</td>
+							</tr>
+							<tr>
+								<td>31 평</td>
+								<td>102.48 ㎡</td>
+							</tr>
+							<tr>
+								<td>32 평</td>
+								<td>105.79 ㎡</td>
+							</tr>
+							<tr>
+								<td>33 평</td>
+								<td>109.09 ㎡</td>
+							</tr>
+							<tr>
+								<td>34 평</td>
+								<td>112.40 ㎡</td>
+							</tr>
+							<tr>
+								<td>35 평</td>
+								<td>115.70 ㎡</td>
+							</tr>
+							<tr>
+								<td>36 평</td>
+								<td>119.01 ㎡</td>
+							</tr>
+							<tr>
+								<td>37 평</td>
+								<td>122.31 ㎡</td>
+							</tr>
+							<tr>
+								<td>38 평</td>
+								<td>125.62 ㎡</td>
+							</tr>
+							<tr>
+								<td>39 평</td>
+								<td>128.93 ㎡</td>
+							</tr>
+							<tr>
+								<td>40 평</td>
+								<td>132.23 ㎡</td>
+							</tr>
+							<tr>
+								<td>41 평</td>
+								<td>135.54 ㎡</td>
+							</tr>
+							<tr>
+								<td>42 평</td>
+								<td>138.84 ㎡</td>
+							</tr>
+							<tr>
+								<td>43 평</td>
+								<td>142.15 ㎡</td>
+							</tr>
+							<tr>
+								<td>44 평</td>
+								<td>145.45 ㎡</td>
+							</tr>
+							<tr>
+								<td>45 평</td>
+								<td>148.76 ㎡</td>
+							</tr>
+							<tr>
+								<td>46 평</td>
+								<td>152.07 ㎡</td>
+							</tr>
+							<tr>
+								<td>47 평</td>
+								<td>155.37 ㎡</td>
+							</tr>
+							<tr>
+								<td>48 평</td>
+								<td>158.68 ㎡</td>
+							</tr>
+							<tr>
+								<td>49 평</td>
+								<td>161.98 ㎡</td>
+							</tr>
+							<tr>
+								<td>50 평</td>
+								<td>165.29 ㎡</td>
+							</tr>
+							<tr>
+								<td>51 평</td>
+								<td>168.60 ㎡</td>
+							</tr>
+							<tr>
+								<td>52 평</td>
+								<td>171.90 ㎡</td>
+							</tr>
+							<tr>
+								<td>53 평</td>
+								<td>175.21 ㎡</td>
+							</tr>
+							<tr>
+								<td>54 평</td>
+								<td>178.51 ㎡</td>
+							</tr>
+							<tr>
+								<td>55 평</td>
+								<td>181.82 ㎡</td>
+							</tr>
+							<tr>
+								<td>56 평</td>
+								<td>185.12 ㎡</td>
+							</tr>
+							<tr>
+								<td>57 평</td>
+								<td>188.43 ㎡</td>
+							</tr>
+							<tr>
+								<td>58 평</td>
+								<td>191.74 ㎡</td>
+							</tr>
+							<tr>
+								<td>59 평</td>
+								<td>195.04 ㎡</td>
+							</tr>
+							<tr>
+								<td>60 평</td>
+								<td>198.35 ㎡</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="gad-box">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8163803188491150" crossorigin="anonymous"></script>
+					<ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-8163803188491150" data-ad-slot="1467842621" data-ad-format="auto" data-full-width-responsive="true"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
