@@ -75,8 +75,8 @@
 				}
 			}
 		</script>
-		<link href="/css/min/e0e680482e6bf363056a4ab70476afb3.css" type="text/css" rel="stylesheet" />
-		<script src="/js/min/fad1b9e6b20a1f712df8b3977f925209.js" async type="text/javascript"></script>
+		<link href="/css/min/88cee51917c3282e2a1bf2a8ef045595.css" type="text/css" rel="stylesheet" />
+		<script src="/js/min/aa826675fa387524a8e69017151a56f9.js" async type="text/javascript"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPPW6284KZ"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
@@ -93,7 +93,7 @@
 				<a href="https://loan.asamaru.net" title="대출 이자 계산기 홈페이지로 이동"><img src="https://loan.asamaru.net/img/bundled/icon-BmxouxuB.png" width="50" height="50" alt="대출 이자 계산기" /></a>
 				<h1><a href="https://loan.asamaru.net" title="대출 이자 계산기 홈페이지로 이동">대출 이자 계산기</a></h1>
 				<p>원리금균등상환/원금균등상환/원금만기일시상환에 대한 이자 및 상환금 계산</p>
-				<button type="button" id="btn-slide"></button>
+				<button type="button" class="btn-slide" data-sidebar="toggle"></button>
 			</div>
 		</header>
 		<section class="main-body clearfix">
@@ -155,9 +155,12 @@
 					</article>
 				</section>
 			</div>
-			<nav id="sidebar" class="slideout-menu">
+			<nav class="slideout-menu" data-sidebar-position="right">
+				<div class="slide-close clearfix">
+					<button data-sidebar="close"></button>
+				</div>
+				<div class="gad-box d" style="display: block" data-ad-client="ca-pub-8163803188491150" data-ad-slot="8991109421" data-ad-format="auto" data-full-width-responsive="true"><ins class="adsbygoogle"></ins></div>
 				<div class="box">
-					<div class="gad-box d" style="display: block" data-ad-client="ca-pub-8163803188491150" data-ad-slot="8991109421" data-ad-format="auto" data-full-width-responsive="true"><ins class="adsbygoogle"></ins></div>
 					<form action="https://www.google.com/search" method="get" target="_blank" class="form-search">
 						<fieldset>
 							<input type="hidden" name="sitesearch" value="https://loan.asamaru.net" />
@@ -166,10 +169,10 @@
 							<input type="text" name="q" value="" placeholder="Search" />
 						</fieldset>
 					</form>
-					<dl class="mb-4 terms-list">
+					<dl class="terms-list">
 						<dt class="mb-2">대출금 상환 방식</dt>
 						<dd>
-							<ul>
+							<ul class="mb-0">
 								<li class="mb-1"><a href="https://loan.asamaru.net/terms/원리금균등분할상환/">원리금 균등 분할 상환</a></li>
 								<li class="mb-1"><a href="https://loan.asamaru.net/terms/원금균등분할상환/">원금 균등 분할 상환</a></li>
 								<li class="mb-1"><a href="https://loan.asamaru.net/terms/원금만기일시상환/">원금 만기 일시 상환</a></li>
