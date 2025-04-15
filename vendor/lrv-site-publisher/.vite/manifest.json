@@ -1,0 +1,52 @@
+{
+  "resources/assets/css/404.scss": {
+    "file": "css/bundled/404-BmjKpx4T.css",
+    "src": "resources/assets/css/404.scss",
+    "isEntry": true
+  },
+  "resources/assets/css/adsense-dev.scss": {
+    "file": "css/bundled/adsense-dev-CbCIiUGk.css",
+    "src": "resources/assets/css/adsense-dev.scss",
+    "isEntry": true
+  },
+  "resources/assets/css/adsense.scss": {
+    "file": "css/bundled/adsense-BbYehBf8.css",
+    "src": "resources/assets/css/adsense.scss",
+    "isEntry": true
+  },
+  "resources/assets/css/inc/pagination.scss": {
+    "file": "css/bundled/inc/pagination-xzWTB80P.css",
+    "src": "resources/assets/css/inc/pagination.scss",
+    "isEntry": true
+  },
+  "resources/assets/css/policy/privacy.scss": {
+    "file": "css/bundled/policy/privacy-BIMfc-Ly.css",
+    "src": "resources/assets/css/policy/privacy.scss",
+    "isEntry": true
+  },
+  "resources/assets/img/ico_skin.gif": {
+    "file": "img/bundled/ico_skin-mZ7EkAFz.gif",
+    "src": "resources/assets/img/ico_skin.gif"
+  },
+  "resources/assets/js/adsense.ts": {
+    "file": "js/bundled/adsense-BZYfYhX_.js",
+    "name": "resources/assets/js/adsense.ts",
+    "src": "resources/assets/js/adsense.ts",
+    "isEntry": true,
+    "meta": {
+      "iife": "js/bundled/adsense-BZYfYhX_-iife.js"
+    }
+  },
+  "resources/assets/js/vue/adsense.ts": {
+    "file": "js/bundled/vue/adsense-kakUuxqd.js",
+    "name": "resources/assets/js/vue/adsense.ts",
+    "src": "resources/assets/js/vue/adsense.ts",
+    "isEntry": true,
+    "css": [
+      "css/bundled/adsense-BDeWrxEY.css"
+    ],
+    "meta": {
+      "iife": "js/bundled/vue/adsense-kakUuxqd-iife.js"
+    }
+  }
+}
