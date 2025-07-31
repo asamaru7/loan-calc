@@ -39,15 +39,15 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "WebSite",
+				"@type": "WebPage",
 				"url": "https://loan.asamaru.net/",
 				"name": "대출 이자 계산기",
 				"author": {
 					"@type": "Person",
 					"name": "아사마루"
 				},
-				"datePublished": "2025-03-08T00:28:16+09:00",
-				"dateModified": "2025-03-08T00:28:16+09:00",
+				"datePublished": "2025-07-31T11:04:34+09:00",
+				"dateModified": "2025-07-31T11:04:34+09:00",
 				"image": {
 					"@type": "ImageObject",
 					"url": "https://loan.asamaru.net/img/icon/icon.696.png",
@@ -67,11 +67,34 @@
 				"mainEntityOfPage": {
 					"@type": "WebPage",
 					"@id": "https://loan.asamaru.net/"
-				}
+				},
+				"@graph": [
+					{
+						"@type": "Organization",
+						"url": "https://loan.asamaru.net",
+						"@id": "https://loan.asamaru.net#organization",
+						"name": "대출 이자 계산기"
+					},
+					{
+						"@type": "WebSite",
+						"url": "https://loan.asamaru.net",
+						"image": {
+							"@type": "ImageObject",
+							"url": "https://loan.asamaru.net/img/icon/icon.696.png",
+							"width": 696,
+							"height": 696
+						},
+						"@id": "https://loan.asamaru.net#website",
+						"name": "대출 이자 계산기",
+						"publisher": {
+							"@id": "https://loan.asamaru.net#organization"
+						}
+					}
+				]
 			}
 		</script>
-		<link href="/css/min/db3624b7d17e4050e0bedfea614bbccf.css" type="text/css" rel="stylesheet" />
-		<script src="/js/min/e890e0c03a6cc33ff0d32fcece6012d2.js" async type="text/javascript"></script>
+		<link href="/css/min/2ca871b55f262c3983cf2e389a69e11e.css" type="text/css" rel="stylesheet" />
+		<script src="/js/min/bac9b8cd9fa6486dc9d3c3529b3e4498.js" async type="text/javascript"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPPW6284KZ"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
@@ -105,6 +128,7 @@
 					</div>
 					<div class="loan-main">
 						<div class="form-container">
+							<h2 class="visually-hidden">대출 이자 계산기</h2>
 							<form class="container">
 								<div class="form-group row mb-3">
 									<label class="col-sm-2 control-label">대출금</label>
@@ -236,6 +260,7 @@
 								<div class="card-header bg-danger-subtle text-danger">★ 주의사항</div>
 								<div class="card-body">계산 결과는 월 단위로 계산한 것으로 실제 대출 시작 일자에 따른 일할 계산과 기타 다른 조건에 따른 오차가 있을 수 있으므로 참고용으로만 사용하세요.</div>
 							</div>
+							<h2 class="visually-hidden">상환방식 가이드</h2>
 							<div class="mb-3">
 								<ul class="nav nav-tabs mb-2">
 									<li class="nav-item"><a href="javascript:void(0)" v-bind:class="['nav-link', { active: type === 1 }]" v-on:click="type = 1">원리금균등상환</a></li>
@@ -335,33 +360,33 @@
 						</div>
 						<section class="terms-container">
 							<div class="card">
-								<div class="card-header mb-3">대출금 상환 방식</div>
+								<div class="card-header mb-3"><h2>대출금 상환 방식</h2></div>
 								<div class="card-body">
 									<div class="bs-callout bs-callout-info">
-										<h4>
+										<h3>
 											<a href="https://loan.asamaru.net/terms/원리금균등분할상환/">
 												원리금 균등 분할 상환
 												<span>상세보기</span>
 											</a>
-										</h4>
+										</h3>
 										일반적으로 사용되는 상환 방식으로 매기간 원금과 이자의 합계가 균등한 저당입니다. 초기에는 원리금 중 이자가 차지하는 부분이 많으나 후기에는 원금상환 비중이 커지면 대출만기 일자에 대출원금은 완전히 상환됩니다.
 									</div>
 									<div class="bs-callout bs-callout-info">
-										<h4>
+										<h3>
 											<a href="https://loan.asamaru.net/terms/원금균등분할상환/">
 												원금 균등 분할 상환
 												<span>상세보기</span>
 											</a>
-										</h4>
+										</h3>
 										대출원금을 대출 기간으로 나눈 할부 상환금에 월별잔고에 대한 이자를 합산하여 납부하는 방식입니다. 원금은 동일하나 이자지불액은 원금을 갚아나가면서 조금씩 줄어듦에 따라 매 기간 적어지게 됩니다.
 									</div>
 									<div class="bs-callout bs-callout-info">
-										<h4>
+										<h3>
 											<a href="https://loan.asamaru.net/terms/원금만기일시상환/">
 												원금 만기 일시 상환 (만기 상환 저당)
 												<span>상세보기</span>
 											</a>
-										</h4>
+										</h3>
 										대출 기간 중에는 이자만 지불하다가 만기일에 대출 전액을 상환하는 방식을 말하며 "일시 상환 대출" 또는 인터리스트 온리 모기지(interest only mortgage)라고도 합니다. 상환 기간에는 대출 원금을 전혀 상환하지 않기 때문에 총 이자가 크므로 이자 비용 부담이 가장 큰 방법입니다.
 									</div>
 								</div>
