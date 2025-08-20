@@ -42,12 +42,13 @@
 				"@type": "WebPage",
 				"url": "https://loan.asamaru.net/",
 				"name": "대출 이자 계산기",
+				"description": "원리금균등상환/원금균등상환/원금만기일시상환에 대한 이자 및 상환금 계산",
 				"author": {
 					"@type": "Person",
 					"name": "아사마루"
 				},
-				"datePublished": "2025-07-31T11:04:34+09:00",
-				"dateModified": "2025-07-31T11:04:34+09:00",
+				"datePublished": "2025-08-20T16:10:56+09:00",
+				"dateModified": "2025-08-20T16:10:56+09:00",
 				"image": {
 					"@type": "ImageObject",
 					"url": "https://loan.asamaru.net/img/icon/icon.696.png",
@@ -93,8 +94,8 @@
 				]
 			}
 		</script>
-		<link href="/css/min/ee0efbb823944552c55f23bf55eb8486.css" type="text/css" rel="stylesheet" />
-		<script src="/js/min/731dd4b2e3bddff2965b559309a500b2.js" async type="text/javascript"></script>
+		<link href="/css/min/c9be0fc367bc76c1f2f83fbfe1659883.css" type="text/css" rel="stylesheet" />
+		<script src="/js/min/5db0f9b8d4013ac60fd388da862ce513.js" async type="text/javascript"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPPW6284KZ"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
@@ -128,8 +129,8 @@
 					</div>
 					<div class="loan-main">
 						<div class="form-container">
-							<h2 class="visually-hidden">대출 이자 계산기</h2>
-							<form class="container">
+							<h2 class="sr-only">대출 이자 계산기</h2>
+							<form class="container" aria-label="대출 이자 계산기">
 								<div class="form-group row mb-3">
 									<label class="col-sm-2 control-label">대출금</label>
 									<div class="col">
@@ -260,7 +261,7 @@
 								<div class="card-header bg-danger-subtle text-danger">★ 주의사항</div>
 								<div class="card-body">계산 결과는 월 단위로 계산한 것으로 실제 대출 시작 일자에 따른 일할 계산과 기타 다른 조건에 따른 오차가 있을 수 있으므로 참고용으로만 사용하세요.</div>
 							</div>
-							<h2 class="visually-hidden">상환방식 가이드</h2>
+							<h2 class="sr-only">상환방식 가이드</h2>
 							<div class="mb-3">
 								<ul class="nav nav-tabs mb-2">
 									<li class="nav-item"><a href="javascript:void(0)" v-bind:class="['nav-link', { active: type === 1 }]" v-on:click="type = 1">원리금균등상환</a></li>
@@ -285,9 +286,9 @@
 							</div>
 							<div v-show="hasResult">
 								<table class="table table-bordered table-condensed calc-summary">
-									<caption class="d-none">
+									<caption class="sr-only">
 										<span>{{ typeText }}</span>
-										<span>계산결과</span>
+										<span>대출 이자 계산결과</span>
 									</caption>
 									<thead>
 										<tr>
@@ -334,6 +335,7 @@
 							<div class="gad-box"><vue-adsense data-ad-client="ca-pub-8163803188491150" data-ad-slot="1467842621" data-ad-format="auto" data-full-width-responsive="true"></vue-adsense></div>
 							<div class="calc-results-container" v-show="hasResult">
 								<table class="table table-striped table-bordered table-condensed calc-results" id="cRows">
+									<caption class="sr-only">회차별 납입 금액</caption>
 									<thead>
 										<tr>
 											<th>회차</th>
@@ -422,8 +424,8 @@
 				<div class="box">
 					<form action="https://www.google.com/search" method="get" target="_blank" class="form-search">
 						<fieldset>
+							<legend class="sr-only">검색하기 폼</legend>
 							<input type="hidden" name="sitesearch" value="https://loan.asamaru.net" />
-							<legend>검색하기 폼</legend>
 							<label>검색하기</label>
 							<input type="text" name="q" value="" placeholder="Search" />
 						</fieldset>
@@ -452,7 +454,9 @@
 		</section>
 		<footer class="bottom">
 			Posted by
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdsefx8At2yOTNyx7xoP9IaFv0odvthnGXMEXG_tKZea_VxMg/viewform?usp=pp_url&entry.316518454=%EB%8C%80%EC%B6%9C+%EC%9D%B4%EC%9E%90+%EA%B3%84%EC%82%B0%EA%B8%B0" title="문의하기" rel="nofollow" target="_blank"><em>아사마루</em></a>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdsefx8At2yOTNyx7xoP9IaFv0odvthnGXMEXG_tKZea_VxMg/viewform?usp=pp_url&entry.316518454=%EB%8C%80%EC%B6%9C+%EC%9D%B4%EC%9E%90+%EA%B3%84%EC%82%B0%EA%B8%B0" title="문의하기" rel="nofollow" target="_blank">
+				<em class="vcard"><span class="fn author">아사마루</span></em>
+			</a>
 			&nbsp;&nbsp;&nbsp;
 			<a href="https://loan.asamaru.net/policy/privacy/" target="_blank" title="개인정보처리방침">개인정보처리방침</a>
 		</footer>

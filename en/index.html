@@ -44,12 +44,13 @@
 				"@type": "WebPage",
 				"url": "https://loan.asamaru.net/en/",
 				"name": "Loan Interest Calculator",
+				"description": "Simple Loan Calculator (P&I with equal, P with equal, Bullet)",
 				"author": {
 					"@type": "Person",
 					"name": "Asamaru"
 				},
-				"datePublished": "2025-07-31T11:04:34+09:00",
-				"dateModified": "2025-07-31T11:04:34+09:00",
+				"datePublished": "2025-08-20T16:10:56+09:00",
+				"dateModified": "2025-08-20T16:10:56+09:00",
 				"image": {
 					"@type": "ImageObject",
 					"url": "https://loan.asamaru.net/img/icon/icon.696.png",
@@ -72,8 +73,8 @@
 				}
 			}
 		</script>
-		<link href="/css/min/ee0efbb823944552c55f23bf55eb8486.css" type="text/css" rel="stylesheet" />
-		<script src="/js/min/9ada8c4f38aa1c0addddfabb300d954d.js" async type="text/javascript"></script>
+		<link href="/css/min/c9be0fc367bc76c1f2f83fbfe1659883.css" type="text/css" rel="stylesheet" />
+		<script src="/js/min/c98ce76852bea91a446a330178618ef2.js" async type="text/javascript"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPPW6284KZ"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
@@ -107,8 +108,8 @@
 					</div>
 					<div class="loan-main">
 						<div class="form-container">
-							<h2 class="visually-hidden">Loan Interest Calculator</h2>
-							<form class="container">
+							<h2 class="sr-only">Loan Interest Calculator</h2>
+							<form class="container" aria-label="Loan Interest Calculator">
 								<div class="form-group row mb-3">
 									<label class="col-sm-2 control-label">Loan amount</label>
 									<div class="col">
@@ -229,7 +230,7 @@
 							</div>
 						</div>
 						<div class="result-container">
-							<h2 class="visually-hidden">Loan Repayment Method Guide</h2>
+							<h2 class="sr-only">Loan Repayment Method Guide</h2>
 							<div class="mb-3">
 								<ul class="nav nav-tabs mb-2">
 									<li class="nav-item"><a href="javascript:void(0)" v-bind:class="['nav-link', { active: type === 1 }]" v-on:click="type = 1">P&I with equal</a></li>
@@ -254,7 +255,7 @@
 							</div>
 							<div v-show="hasResult">
 								<table class="table table-bordered table-condensed calc-summary">
-									<caption class="d-none">
+									<caption class="sr-only">
 										<span>{{ typeText }}</span>
 										<span>Result</span>
 									</caption>
@@ -303,6 +304,7 @@
 							<div class="gad-box"><vue-adsense data-ad-client="ca-pub-8163803188491150" data-ad-slot="1467842621" data-ad-format="auto" data-full-width-responsive="true"></vue-adsense></div>
 							<div class="calc-results-container" v-show="hasResult">
 								<table class="table table-striped table-bordered table-condensed calc-results" id="cRows">
+									<caption class="sr-only">Payment amount for each loan installment</caption>
 									<thead>
 										<tr>
 											<th>Num</th>
@@ -351,8 +353,8 @@
 				<div class="box">
 					<form action="https://www.google.com/search" method="get" target="_blank" class="form-search">
 						<fieldset>
+							<legend class="sr-only">검색하기 폼</legend>
 							<input type="hidden" name="sitesearch" value="https://loan.asamaru.net" />
-							<legend>검색하기 폼</legend>
 							<label>검색하기</label>
 							<input type="text" name="q" value="" placeholder="Search" />
 						</fieldset>
@@ -366,7 +368,9 @@
 		</section>
 		<footer class="bottom">
 			Posted by
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdsefx8At2yOTNyx7xoP9IaFv0odvthnGXMEXG_tKZea_VxMg/viewform?usp=pp_url&entry.316518454=%EB%8C%80%EC%B6%9C+%EC%9D%B4%EC%9E%90+%EA%B3%84%EC%82%B0%EA%B8%B0" title="문의하기" rel="nofollow" target="_blank"><em>아사마루</em></a>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdsefx8At2yOTNyx7xoP9IaFv0odvthnGXMEXG_tKZea_VxMg/viewform?usp=pp_url&entry.316518454=%EB%8C%80%EC%B6%9C+%EC%9D%B4%EC%9E%90+%EA%B3%84%EC%82%B0%EA%B8%B0" title="문의하기" rel="nofollow" target="_blank">
+				<em class="vcard"><span class="fn author">아사마루</span></em>
+			</a>
 		</footer>
 	</body>
 </html>
