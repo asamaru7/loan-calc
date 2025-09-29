@@ -11,7 +11,7 @@
 			<description>원리금균등상환/원금균등상환/원금만기일시상환에 대한 이자 및 상환금 계산</description>
 		</image>
 		<managingEditor>아사마루 (asamaru@asamaru.net)</managingEditor>
-		<pubDate>Thu, 31 Jul 2025 11:04:34 +0900</pubDate>
+		<pubDate>Mon, 29 Sep 2025 11:51:17 +0900</pubDate>
 		<item>
 			<title>원리금 균등 분할 상환</title>
 			<pubDate>Wed, 21 Jun 2017 13:50:43 +0900</pubDate>
@@ -19,7 +19,7 @@
 			<guid>https://loan.asamaru.net/terms/%EC%9B%90%EB%A6%AC%EA%B8%88%EA%B7%A0%EB%93%B1%EB%B6%84%ED%95%A0%EC%83%81%ED%99%98/</guid>
 			<author>아사마루 (asamaru@asamaru.net)</author>
 			<category>대출용어</category>
-			<description><![CDATA[ <div class="markdown-body entry-content daum-wm-content">
+			<description><![CDATA[ <div class="markdown-body">
         <h2>원리금 균등 분할 상환이란?</h2>
         <blockquote>
             <p>"원리금 균등 분할 상환"은 가장 일반적으로 사용되는 상환 방식으로 매기간 원금과 이자를 합한 할부 상환금이 균등한 방식입니다.</p>
@@ -44,7 +44,7 @@
 			<guid>https://loan.asamaru.net/terms/%EC%9B%90%EA%B8%88%EA%B7%A0%EB%93%B1%EB%B6%84%ED%95%A0%EC%83%81%ED%99%98/</guid>
 			<author>아사마루 (asamaru@asamaru.net)</author>
 			<category>대출용어</category>
-			<description><![CDATA[ <div class="markdown-body entry-content daum-wm-content">
+			<description><![CDATA[ <div class="markdown-body">
 		<h2>원금 균등 상환이란?</h2>
 		<blockquote>
 			<p>"원금 균등 상환"은 대출원금을 대출 기간으로 나눈 할부 상환금에 월별잔고에 대한 이자를 합산하여 납부하는 방식입니다.</p>
@@ -70,7 +70,7 @@
 			<guid>https://loan.asamaru.net/terms/%EC%9B%90%EA%B8%88%EB%A7%8C%EA%B8%B0%EC%9D%BC%EC%8B%9C%EC%83%81%ED%99%98/</guid>
 			<author>아사마루 (asamaru@asamaru.net)</author>
 			<category>대출용어</category>
-			<description><![CDATA[ <div class="markdown-body entry-content daum-wm-content">
+			<description><![CDATA[ <div class="markdown-body">
 		<h2>원금 만기 일시 상환이란?</h2>
 		<blockquote>
 			<p>"원금 만기 일시 상환"은 대출 기간 중에는 이자만 지불하다가 만기일에 대출 전액을 상환하는 방식을 말하며 "일시 상환 대출"라고도 합니다.</p>
