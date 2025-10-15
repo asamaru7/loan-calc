@@ -7,6 +7,14 @@
       "resources/assets/css/404.css"
     ]
   },
+  "resources/assets/css/about-us.scss": {
+    "file": "css/bundled/about-us-B6BX2by6.css",
+    "src": "resources/assets/css/about-us.scss",
+    "isEntry": true,
+    "names": [
+      "resources/assets/css/about-us.css"
+    ]
+  },
   "resources/assets/css/adsense-dev.scss": {
     "file": "css/bundled/adsense-dev-CbCIiUGk.css",
     "src": "resources/assets/css/adsense-dev.scss",
@@ -53,7 +61,7 @@
     }
   },
   "resources/assets/js/vue/adsense.ts": {
-    "file": "js/bundled/vue/adsense-B009CHbp.js",
+    "file": "js/bundled/vue/adsense-BK3J1geQ.js",
     "name": "resources/assets/js/vue/adsense.ts",
     "src": "resources/assets/js/vue/adsense.ts",
     "isEntry": true,
@@ -61,7 +69,7 @@
       "css/bundled/adsense-BDeWrxEY.css"
     ],
     "meta": {
-      "iife": "js/bundled/vue/adsense-B009CHbp-iife.js"
+      "iife": "js/bundled/vue/adsense-BK3J1geQ-iife.js"
     }
   }
 }
