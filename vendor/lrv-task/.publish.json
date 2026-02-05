@@ -1,0 +1,4 @@
+{
+  "publish": "vendor/lrv-task",
+  "dest": "resources/dist-vite"
+}

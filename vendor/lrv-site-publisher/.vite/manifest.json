@@ -3,6 +3,7 @@
     "file": "css/bundled/404-D7bvd74U.css",
     "src": "resources/assets/css/404.scss",
     "isEntry": true,
+    "name": "resources/assets/css/404.scss",
     "names": [
       "resources/assets/css/404.css"
     ]
@@ -11,6 +12,7 @@
     "file": "css/bundled/about-us-B6BX2by6.css",
     "src": "resources/assets/css/about-us.scss",
     "isEntry": true,
+    "name": "resources/assets/css/about-us.scss",
     "names": [
       "resources/assets/css/about-us.css"
     ]
@@ -19,22 +21,25 @@
     "file": "css/bundled/adsense-dev-CbCIiUGk.css",
     "src": "resources/assets/css/adsense-dev.scss",
     "isEntry": true,
+    "name": "resources/assets/css/adsense-dev.scss",
     "names": [
       "resources/assets/css/adsense-dev.css"
     ]
   },
   "resources/assets/css/adsense.scss": {
-    "file": "css/bundled/adsense-BDGi-g8L.css",
+    "file": "css/bundled/adsense-BlP71L6h.css",
     "src": "resources/assets/css/adsense.scss",
     "isEntry": true,
+    "name": "resources/assets/css/adsense.scss",
     "names": [
       "resources/assets/css/adsense.css"
     ]
   },
   "resources/assets/css/inc/pagination.scss": {
-    "file": "css/bundled/inc/pagination-xzWTB80P.css",
+    "file": "css/bundled/inc/pagination-BPaotucH.css",
     "src": "resources/assets/css/inc/pagination.scss",
     "isEntry": true,
+    "name": "resources/assets/css/inc/pagination.scss",
     "names": [
       "resources/assets/css/inc/pagination.css"
     ]
@@ -43,6 +48,7 @@
     "file": "css/bundled/policy/privacy-BIMfc-Ly.css",
     "src": "resources/assets/css/policy/privacy.scss",
     "isEntry": true,
+    "name": "resources/assets/css/policy/privacy.scss",
     "names": [
       "resources/assets/css/policy/privacy.css"
     ]
